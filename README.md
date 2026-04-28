@@ -30,13 +30,13 @@ If you find this package useful in your research, please cite the relevant artic
 
 ### Mathematica
 
-Copy the contents of the `Mathematica/` directory to a location on your Mathematica `$Path`, or add the directory to `$Path` manually. The package is loaded with:
+The package is loaded with:
 
 ```mathematica
-Needs["LinApart`"]
+Get["$PATHLINAPART/LinApart.m"]
 ```
 
-The package requires no external dependencies beyond a standard Mathematica installation.
+where $PATHLINAPART is the path to the LinApart/Mathematic folder. The package requires no external dependencies beyond a standard Mathematica installation.
 
 ### C
 
@@ -113,7 +113,7 @@ LinApart[1/(x y (x + y)), {x, y}, "Method" -> "Groebner"]
 - `"Leinartas"` — Leinartas' decomposition via polynomial ideal reduction (general denominators)
 - `"Groebner"` — Gröbner basis approach (general denominators)
 
-For more examples, see the `Examples/` directory.
+For more examples, see the `Tests/` directory.
 
 ## Testing
 
