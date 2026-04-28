@@ -1246,73 +1246,6 @@ Print["--------------------------------------------"];
 (*Gr\[ODoubleDot]bner*)
 
 
-(* ::Subsubsection:: *)
-(*PreTest*)
-
-
-expr = 1/(x1 x2 (a x1 + x2 - Sqrt[c] Log[x]) (x1 + b x2 - 1));
-vars = {x1, x2};
-
-GroebnerApart[expr, vars, True, True]
-expr - % // Together
-
-
-expr = 1/(x y (x + y - 1));
-vars = {x, y};
-
-LinApart[expr, vars, "Method" -> "Groebner"]
-expr - % // Together
-
-
-expr = (2 y - x)/(y (x + y) (y - x));
-vars = {x, y};
-
-LinApart[expr, vars, "Method" -> "Groebner"]
-expr - % // Together
-
-
-expr = 1/(x y (x + y) (x - y));
-vars = {x, y};
-
-LinApart[expr, vars, "Method" -> "Groebner"]
-expr - % // Together
-
-
-expr = 1/(x^2 y (x + y)^2);
-vars = {x, y};
-
-LinApart[expr, vars, "Method" -> "Groebner"]
-expr - % // Together
-
-
-expr = 1/(x y (a x + y - 1) (x + b y - 1));
-vars = {x, y};
-
-LinApart[expr, vars, "Method" -> "Groebner"]
-expr - % // Together
-
-
-expr = 1/(x1 x2 (a x1 + x2 - Sqrt[c] Log[x]) (x1 + b x2 - 1));
-vars = {x1, x2};
-
-LinApart[expr, vars, "Method" -> "Groebner"]
-expr - % // Together
-
-
-expr = 1/(x y ((x + y)/(1 + b)) (x - y + 1));
-vars = {x, y};
-
-LinApart[expr, vars, "Method" -> "Groebner"]
-expr - % // Together
-
-
-expr = 1/((x^2 + y^2) (x^2 + y^2 + 1));
-vars = {x, y};
-
-LinApart[expr, vars, "Method" -> "Groebner"]
-expr - % // Together
-
-
 (* ::Subsubsection::Closed:: *)
 (*Examples*)
 
@@ -1566,13 +1499,13 @@ Print["============================================"];
 
 ResultsMV = MapIndexed[
     {TestLinApartMV[#1], First[#2]} &,
-    Map[Append[#,"Method"->"Leinartas"]&,TestDataMVLinear]
+    Map[Append[#,"Method"->"Groebner"]&,TestDataMVLinear]
 ];
 
 PassedMV = Count[ResultsMV, {1, _}];
 FailedMV = Count[ResultsMV, {0, _}];
 FailedIndicesMV = Cases[ResultsMV, {0, idx_} :> idx];
-FailedTestsMV = TestDataMV[[FailedIndicesMV, 1]];
+FailedTestsMV = TestDataMVLinear[[FailedIndicesMV, 1]];
 
 Print[""];
 Print["--------------------------------------------"];
@@ -1878,7 +1811,7 @@ Print["--------------------------------------------"];
 CloseKernels[];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Summary*)
 
 
