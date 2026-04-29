@@ -367,6 +367,7 @@ mathematicaPartialFraction[
         varPat,
         tmpPolynomialPart,
         rationalPart,
+        tmpSeriesPart,
         LeinartasCore
     },
 
@@ -391,16 +392,20 @@ mathematicaPartialFraction[
       Remove the polynomial part before entering the recursive syzygy
       elimination to avoid counting it twice.
     *)
-    rationalPart = If[FreeQ[keepForDivision, varPat],
-        keepForDivision * keepFrac,
-        Together[
-            keepForDivision * keepFrac -
-            Series[
-                keepForDivision * keepFrac,
-                Sequence @@ ({#, Infinity, 0} & /@ vars)
-            ] // Normal
-        ]
-    ];
+	 If[!FreeQ[keepForDivision, varPat],
+	    tmpSeriesPart = Series[
+	        keepForDivision * keepFrac,
+	        Sequence @@ ({#, Infinity, 0} & /@ vars)
+	    ] // Normal,
+	    tmpSeriesPart = 0
+	];
+	
+	tmpPolynomialPart = coeff * ignoreFrac * tmpSeriesPart;
+	
+	rationalPart = If[tmpSeriesPart === 0,
+	    keepForDivision * keepFrac,
+	    Together[keepForDivision * keepFrac - tmpSeriesPart]
+	];
 
     (*
       Local recursive core implementing the prototype Leinartas wrapper.
@@ -495,7 +500,7 @@ mathematicaPartialFraction[
         ];
 
         (* Recurse exactly as in the prototype wrapper. *)
-        coeffLocal * (LeinartasCore[result] // Expand)
+        coeffLocal * (LeinartasCore[result]//Expand)
     ];
 
     coeff * ignoreFrac * LeinartasCore[rationalPart] + tmpPolynomialPart
