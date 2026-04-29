@@ -112,63 +112,215 @@ MakeCoefficientsSymbolic::notSymbol = "Argument `1` at position `2` is not a Sym
 (*ReducePolynomialForResidue*)
 
 
-	(*
-	  ReducePolynomialForResidue[expr, polynomial, var]
-	
-	  Reduces an expression modulo a polynomial, preparing it for residue 
-	  calculation at roots of the polynomial.
-	
-	  Motivation:
-	    When computing residues at roots of an irreducible polynomial (not 
-	    factored to linear factors), we work in the quotient ring 
-	    K[var]/(polynomial). All powers of var >= degree(polynomial) can be 
-	    reduced using the relation polynomial(var) = 0.
-	
-	    This function handles various expression types:
-	      - Pure polynomials: reduced via PolynomialRemainder
-	      - Products: coefficients made symbolic, product expanded, then reduced
-	      - Negative powers (denominators): inverted via PolynomialExtendedGCD
-	      - Powers of polynomials: expanded then reduced
-	
-	  Parameters:
-	    expr       - The expression to reduce. Can be polynomial, product, 
-	                 power, or sum of such.
-	    polynomial - The modulus polynomial. Reduction uses polynomial = 0.
-	    var        - The variable.
-	
-	  Returns:
-	    The reduced expression, a polynomial in var of degree < degree(polynomial).
-	
-	  Examples:
-	    ReducePolynomialForResidue[x^3, x^2 + 1, x]
-	      -> -x  (since x^2 = -1, so x^3 = -x)
-	
-	    ReducePolynomialForResidue[1/(x^2 + 1), x^2 + 1, x]
-	      -> 0  (or the inverse, depending on interpretation)
-	
-	    ReducePolynomialForResidue[(x + 1)^3, x^2 + 1, x]
-	      -> reduced form
-	
-	  Algorithm overview:
-	    - Lists: map over elements
-	    - Free of var: return unchanged
-	    - Sums of non-polynomials: map over terms
-	    - Polynomials below degree: return unchanged
-	    - Polynomials at/above degree: apply PolynomialRemainder
-	    - Products: make coefficients symbolic, multiply, collect, reduce, restore
-	    - Negative powers: use extended GCD to find modular inverse
-	    - Positive powers of polynomials: expand then reduce
-	
-	  Notes:
-	    - Uses MakeCoefficientsSymbolic for products to avoid coefficient explosion.
-	    - The extended GCD gives the modular inverse: if gcd(p, q) = 1, then 
-	      a*p + b*q = 1, so b*q \[Congruent] 1 (mod p), meaning b = q^(-1) mod p.
-	*)
+(*
+  ReducePolynomialForResidue[expr, polynomial, var]
+
+  Reduces an expression modulo a polynomial, preparing it for residue 
+  calculation at roots of the polynomial.
+
+  Motivation:
+    When computing residues at roots of an irreducible polynomial (not 
+    factored to linear factors), we work in the quotient ring 
+    K[var]/(polynomial). All powers of var >= degree(polynomial) can be 
+    reduced using the relation polynomial(var) = 0.
+
+    This function handles various expression types:
+      - Pure polynomials: reduced via precomputed dispatch table
+      - Products: coefficients made symbolic, product expanded, then reduced
+      - Negative powers (denominators): inverted via PolynomialExtendedGCD
+      - Powers of polynomials: base reduced first, then expanded and reduced
+
+  Parameters:
+    expr       - The expression to reduce. Can be polynomial, product, 
+                 power, or sum of such.
+    polynomial - The modulus polynomial. Reduction uses polynomial = 0.
+    var        - The variable.
+
+  Returns:
+    The reduced expression, a polynomial in var of degree < degree(polynomial).
+
+  Algorithm overview:
+    - Lists: map over elements
+    - Free of var: return unchanged
+    - Sums of non-polynomials: map over terms
+    - Polynomials below degree: return unchanged
+    - Polynomials at/above degree: reduce via precomputed dispatch table
+    - Products: make coefficients symbolic, multiply, collect, reduce, restore
+    - Negative powers: use extended GCD to find modular inverse
+    - Positive powers of polynomials: reduce base, expand, reduce via dispatch
+
+  Notes:
+    - Uses MakeCoefficientsSymbolic for products to avoid coefficient explosion
+      when coefficients are rational functions of other variables.
+    - The extended GCD gives the modular inverse: if gcd(p, q) = 1, then 
+      a*p + b*q = 1, so b*q \[Congruent] 1 (mod p), meaning b = q^(-1) mod p.
+    - Reduction via precomputed dispatch tables (MakeReductionRule) is 
+      preferred over PolynomialRemainder for power expressions because 
+      PolynomialRemainder performs expensive GCD operations on the 
+      coefficients when they are rational functions of other variables.
+      The dispatch table approach reduces via pattern matching, avoiding 
+      this overhead entirely.
+*)
+
+
+(* ::Subsubsection:: *)
+(*GetMaxOrderForReduction*)
+
+
+(*
+  GetMaxOrderForReduction[expr, polynomial, var]
+
+  Computes the maximum power of var that can appear in expr after 
+  expansion but before reduction. This is needed to precompute the 
+  correct number of entries in the dispatch table.
+
+  The result depends on the structure of expr:
+    - var^power: the max order is simply power
+    - poly^power: the max order is (deg(polynomial)-1) * |power|, 
+      since after reduction each factor has degree at most deg(poly)-1
+    - product of terms: sum of numerator degree and denominator 
+      contribution (each inverse factor contributes deg(poly)-1)
+    - polynomial sum: the degree of the polynomial
+
+  Parameters:
+    expr       - The expression whose max order is needed.
+    polynomial - The modulus polynomial.
+    var        - The variable.
+
+  Returns:
+    An integer: the maximum power of var that needs a reduction rule.
+*)
+
+ClearAll[GetMaxOrderForReduction]
+
+(* Pure power of the variable itself. *)
+GetMaxOrderForReduction[Power[var_Symbol, power_Integer], polynomial_Plus, var_Symbol] :=
+    power /; PolynomialQ[polynomial, var]
+
+(* Power of a polynomial expression. *)
+GetMaxOrderForReduction[Power[expr_, power_], polynomial_Plus, var_Symbol] :=
+    Module[{maxOrderOfPolyomial},
+        maxOrderOfPolyomial = Exponent[polynomial, var];
+        (maxOrderOfPolyomial - 1) * Abs[power]
+    ] /; PolynomialQ[expr, var] && PolynomialQ[polynomial, var]
+
+(* Product of terms (may include inverse powers). *)
+GetMaxOrderForReduction[expr_Times, polynomial_Plus, var_Symbol] :=
+    Module[{tmpNumerator, tmpDenominator, maxOrderOfNumerator, maxOrderOfDenominator, maxOrderOfPolyomial},
+        tmpNumerator = Numerator[expr];
+        tmpDenominator = Denominator[expr];
+        maxOrderOfPolyomial = Exponent[polynomial, var];
+        maxOrderOfNumerator = Exponent[tmpNumerator, var];
+        maxOrderOfDenominator = (maxOrderOfPolyomial - 1) * (Length[tmpDenominator]);
+        maxOrderOfNumerator + maxOrderOfDenominator
+    ] /; PolynomialQ[polynomial, var]
+
+(* Polynomial sum. *)
+GetMaxOrderForReduction[expr_Plus, polynomial_Plus, var_Symbol] :=
+    Exponent[expr, var] /; PolynomialQ[expr, var] && PolynomialQ[polynomial, var]
+
+
+(* ::Subsubsection:: *)
+(*MakeReductionRule*)
+
+
+(*
+  MakeReductionRule[polynomial, var, maxOrder]
+
+  Precomputes a dispatch table of reduction rules for powers of var 
+  modulo the given polynomial.
+
+  The key idea: instead of calling PolynomialRemainder at runtime 
+  (which performs expensive GCD operations on coefficients), we 
+  precompute var^k mod polynomial for each k from degree(polynomial) 
+  up to maxOrder, and store the results as pattern-matching rules.
+
+  At runtime, reduction is a single rule application via Dispatch \[LongDash] 
+  pure structural pattern matching with no polynomial arithmetic.
+
+  Algorithm:
+    1. Solve for the leading monomial: var^d = -(polynomial - var^d).
+    2. Iteratively compute var^(d+1), var^(d+2), ..., var^maxOrder by 
+       multiplying by var and applying the reduction rule, collecting 
+       by var with Together on coefficients at each step.
+    3. Package the results as a Dispatch table for fast lookup.
+
+  Parameters:
+    polynomial - The modulus polynomial (must be polynomial in var).
+    var        - The variable.
+    maxOrder   - The highest power of var that needs a reduction rule.
+
+  Returns:
+    A Dispatch table mapping var^k -> reduced form for 
+    k = degree(polynomial), ..., maxOrder.
+
+  Notes:
+    - Collect[#, var, Together]& at each step keeps the coefficients 
+      simplified, preventing intermediate expression swell. This is 
+      crucial when coefficients are rational functions of other variables.
+    - The dispatch table is computed once and reused for all reductions 
+      within a single residue computation.
+*)
+
+ClearAll[MakeReductionRule]
+
+MakeReductionRule[polynomial_, var_Symbol, maxOrder_Integer] :=
+    Module[{tmp, order, tmpRuleReduction, redcutionorder, tableOfRules},
+
+        (* Get the degree of the polynomial. *)
+        order = Exponent[polynomial, var];
+
+        (* 
+          Solve for the leading monomial: var^order = -(lower terms).
+          This is the fundamental reduction identity.
+        *)
+        tmpRuleReduction = With[
+            {leftHandSide = var^order, rightHandSide = -polynomial + var^order},
+            leftHandSide -> rightHandSide
+        ];
+
+        (* 
+          Iteratively build the reduction table.
+          
+          Starting from var^(order-1), multiply by var to get var^order, 
+          apply the reduction rule, collect, and record the result. 
+          Repeat up to var^maxOrder.
+          
+          The Collect[#, var, Together]& at each step is essential: it 
+          keeps coefficients in simplified form, preventing the kind of 
+          expression swell that makes PolynomialRemainder slow when 
+          coefficients are rational functions.
+        *)
+        tmp = var^(order - 1);
+        redcutionorder = maxOrder - order;
+        tableOfRules = Table[
+            tmp = tmp * var // Collect[#, var] &;
+            tmp = tmp /. tmpRuleReduction // Collect[#, var, Together] &;
+            {var^(i + order), tmp},
+            {i, 0, redcutionorder}
+        ];
+
+        (* 
+          Package as Dispatch table for O(1) lookup.
+          Each rule maps var^k -> (reduced polynomial of degree < order).
+        *)
+        Table[
+            With[
+                {leftHandSide = tableOfRules[[i, 1]], rightHandSide = tableOfRules[[i, 2]]},
+                leftHandSide -> rightHandSide
+            ],
+            {i, 1, Length[tableOfRules]}
+        ] // Dispatch
+    ]
+
+
+(* ::Subsubsection:: *)
+(*ReducePolynomialForResidue*)
+
 
 ClearAll[ReducePolynomialForResidue]
 
-
-
+(* Input validation. *)
 ReducePolynomialForResidue[args___] := Null /; !CheckArguments[ReducePolynomialForResidue[args], 3]
 
 ReducePolynomialForResidue[Power[expr_, -1], polynomial_, var_Symbol] := (
@@ -186,8 +338,6 @@ ReducePolynomialForResidue[expr_, polynomial_, var_] := (
     $Failed
 ) /; !PolynomialQ[polynomial, var]
 
-
-
 (* Map over lists. *)
 ReducePolynomialForResidue[expr_List, polynomial_, var_Symbol] :=
     ReducePolynomialForResidue[#, polynomial, var] & /@ expr
@@ -196,7 +346,7 @@ ReducePolynomialForResidue[expr_List, polynomial_, var_Symbol] :=
 ReducePolynomialForResidue[expr_, polynomial_, var_Symbol] :=
     expr /; FreeQ[expr, var]
 
-(* Sum of non-polynomial terms: map over each term. *)
+(* Sum of non-polynomial terms: map over each term independently. *)
 ReducePolynomialForResidue[expr_Plus, polynomial_, var_Symbol] :=
     ReducePolynomialForResidue[#, polynomial, var] & /@ expr /; !PolynomialQ[expr, var]
 
@@ -205,77 +355,140 @@ ReducePolynomialForResidue[expr_, polynomial_, var_Symbol] :=
     expr /; PolynomialQ[expr, var] && (Exponent[expr, var] <= Exponent[polynomial, var] - 1)
 
 (* 
-  Product of terms: make coefficients symbolic to avoid blowup during 
-  multiplication, then reduce the collected result.
+  Product of terms: reduce each factor, make coefficients symbolic to 
+  avoid blowup during multiplication, then reduce the collected result 
+  via precomputed dispatch table, and restore original coefficients.
+  
+  The MakeCoefficientsSymbolic step is crucial: without it, multiplying 
+  factors with rational-function coefficients (e.g., from Mandelstam 
+  invariants, masses) causes massive expression growth. By replacing 
+  coefficients with dummy symbols, the multiplication and reduction 
+  operate on simple polynomials, and the original coefficients are 
+  restored only at the end.
 *)
 ReducePolynomialForResidue[expr_Times, polynomial_, var_Symbol] := Module[
-    {tmp, dummyVar, tmpSymbolically, rulesCoeff},
+    {tmp, dummyVar, maxOrder, ruleReduction, tmpSybmolically, rulesCoeff},
 
-    (* Convert product to list and reduce each factor first. *)
+    (* Precompute the dispatch table for this reduction. *)
+    maxOrder = GetMaxOrderForReduction[expr, polynomial, var];
+    ruleReduction = MakeReductionRule[polynomial, var, maxOrder];
+
+    (* Reduce each factor of the product independently. *)
     tmp = List @@ expr;
     tmp = ReducePolynomialForResidue[#, polynomial, var] & /@ tmp;
 
-    (* Make coefficients symbolic for each factor. *)
+    (* Replace coefficients with dummy symbols. *)
     tmp = Table[
-        MakeCoefficientsSymbolic[tmp[[i]], var, Unique[dummyVar]], 
+        MakeCoefficientsSymbolic[tmp[[i]], var, Unique[dummyVar]],
         {i, 1, Length[tmp]}
     ];
 
-    (* Separate symbolic expressions and coefficient rules. *)
-    {tmpSymbolically, rulesCoeff} = {tmp[[All, 1]], tmp[[All, 2]] // Flatten // Dispatch};
+    (* Separate symbolic expressions and coefficient restoration rules. *)
+    {tmpSybmolically, rulesCoeff} = {tmp[[All, 1]], tmp[[All, 2]] // Flatten // Dispatch};
 
-    (* Multiply symbolic expressions and collect by var. *)
-    tmp = Times @@ tmpSymbolically // Collect[#, var] &;
+    (* Multiply the symbolized factors and collect by var. *)
+    tmp = Times @@ tmpSybmolically;
+    tmp = tmp // Collect[#, var] &;
 
-    (* Reduce the result modulo polynomial. *)
-    tmp = PolynomialRemainder[tmp, polynomial, var];
+    (* Reduce via dispatch table (fast pattern matching, no GCD). *)
+    tmp = tmp /. ruleReduction // Collect[#, var] &;
 
     (* Restore original coefficients. *)
-    tmp /. rulesCoeff
+    tmp = tmp /. rulesCoeff;
+
+    tmp
 ]
 
 (* 
   Polynomial (as sum) or pure power of var at or above reduction threshold.
-  Direct application of PolynomialRemainder.
+  Precompute dispatch table and apply directly.
 *)
 ReducePolynomialForResidue[
-    expr_Plus | expr : Power[var_Symbol, power_Integer], 
-    polynomial_, 
+    expr_Plus | expr : Power[var_Symbol, power_Integer],
+    polynomial_,
     var_Symbol
-] := PolynomialRemainder[expr, polynomial, var] /; 
-    PolynomialQ[expr, var] && (
-        (Exponent[expr, var] >= Exponent[polynomial, var]) || 
-        power >= Exponent[polynomial, var]
-    )
+] := Module[{tmp, maxOrder, ruleReduction},
+
+    maxOrder = GetMaxOrderForReduction[expr, polynomial, var];
+    ruleReduction = MakeReductionRule[polynomial, var, maxOrder];
+    tmp = expr /. ruleReduction;
+
+    tmp
+] /; PolynomialQ[expr, var] && (
+    (Exponent[expr, var] >= Exponent[polynomial, var]) ||
+    power >= Exponent[polynomial, var]
+)
 
 (* 
   Simple inverse: expr^(-1) where expr is polynomial.
-  Use extended GCD: if gcd(polynomial, expr) = 1, then a*polynomial + b*expr = 1,
-  so b*expr \[Congruent] 1 (mod polynomial), meaning b is the inverse.
+  
+  Use extended GCD: if gcd(polynomial, expr) = 1, then 
+  a*polynomial + b*expr = 1, so b \[Congruent] expr^(-1) (mod polynomial).
+  The result is already a polynomial of degree < degree(polynomial), 
+  so no further reduction is needed.
 *)
 ReducePolynomialForResidue[Power[expr_, -1], polynomial_, var_Symbol] :=
     PolynomialExtendedGCD[polynomial, expr, var][[2, 2]] /; PolynomialQ[expr, var]
 
 (* 
-  Positive power of polynomial expression: expand and reduce.
+  Positive power of polynomial expression: reduce base first, then 
+  raise to power and reduce via dispatch table.
+  
+  The base is reduced recursively (giving degree < degree(polynomial)), 
+  then raised to the specified power. The result can have degree up to 
+  (degree(polynomial)-1) * power, which is reduced back using the 
+  precomputed dispatch table.
+  
+  Collect[#, var]& is applied after each step to keep the expression 
+  in canonical collected form, preventing spurious term proliferation.
 *)
-ReducePolynomialForResidue[Power[expr_, power_Integer], polynomial_, var_Symbol] :=
-    PolynomialRemainder[expr^power, polynomial, var] /; 
-    PolynomialQ[expr, var] && power > 0
+ReducePolynomialForResidue[Power[expr_, power_Integer], polynomial_, var_Symbol] := Module[
+    {tmp, maxOrder, ruleReduction},
+
+    maxOrder = GetMaxOrderForReduction[expr^power, polynomial, var];
+    ruleReduction = MakeReductionRule[polynomial, var, maxOrder];
+
+    (* Reduce the base expression first. *)
+    tmp = ReducePolynomialForResidue[#, polynomial, var] & /@ expr;
+
+    (* Raise reduced base to power and collect. *)
+    tmp = Collect[tmp, var]^power // Collect[#, var] &;
+
+    (* Reduce via dispatch table. *)
+    tmp = tmp /. ruleReduction;
+
+    tmp
+] /; PolynomialQ[expr, var] && power > 0
 
 (* 
   Negative power (beyond -1) of polynomial expression.
-  First find the inverse using extended GCD, then raise to positive power and reduce.
+  
+  First find the modular inverse using extended GCD (giving a polynomial 
+  of degree < degree(polynomial)), then raise to the positive power 
+  and reduce via dispatch table.
+  
+  This is the most expensive case: the inverse can have complicated 
+  rational-function coefficients, and raising it to a high power 
+  produces many cross-terms. The dispatch table approach handles this 
+  efficiently because it reduces via pattern matching rather than 
+  polynomial GCD operations on the coefficients.
 *)
 ReducePolynomialForResidue[Power[expr_, power_Integer], polynomial_, var_Symbol] := Module[
-    {tmp},
+    {tmp, maxOrder, ruleReduction},
+
+    maxOrder = GetMaxOrderForReduction[expr^power, polynomial, var];
+    ruleReduction = MakeReductionRule[polynomial, var, maxOrder];
 
     (* Get modular inverse of expr. *)
     tmp = PolynomialExtendedGCD[polynomial, expr, var][[2, 2]];
 
-    (* Raise inverse to positive power and reduce. *)
-    PolynomialRemainder[tmp^(-power), polynomial, var]
+    (* Raise inverse to positive power and collect. *)
+    tmp = Collect[tmp, var]^-power // Collect[#, var] &;
 
+    (* Reduce via dispatch table. *)
+    tmp = tmp /. ruleReduction;
+
+    tmp
 ] /; PolynomialQ[expr, var] && power < -1
 
 ReducePolynomialForResidue::notSymbol = "Third argument `1` is not a Symbol.";
