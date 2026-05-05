@@ -234,7 +234,7 @@ FindSafeNullRelations::emptyList = "The `1` list must not be empty.";
 FindSafeNullRelations::tooFewDenoms = "Need at least 2 denominators to find null relations.";
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*EliminateNullRelations*)
 
 
@@ -730,8 +730,6 @@ ExpandDenominatorTerms[expr_] := Module[
     3. Transform back to original variables
     4. Recurse with remaining bases
 
-  Base case: empty basis list, return expression unchanged.
-
   Parameters:
     expr  - The expression (can be a sum)
     vars  - List of variables
@@ -743,39 +741,40 @@ ExpandDenominatorTerms[expr_] := Module[
 
 ClearAll[ExpandNumeratorInDenomSpace]
 
-ExpandNumeratorInDenomSpace[args___] := Null /; !CheckArguments[ExpandNumeratorInDenomSpace[args], {2,3}]
+ExpandNumeratorInDenomSpace[args___] := Null /; ! CheckArguments[ExpandNumeratorInDenomSpace[args], {2, 3}]
 
 (* If no base is given *)
 ExpandNumeratorInDenomSpace[expr_, vars_List] := Module[
-    {tmp, num, den, denoms, q, r, result},
+      {tmp, num, den, denoms, q, r, result},
+  
+      If[Denominator[expr] === 1 || ! PolynomialQ[Numerator[expr], vars],
+           Return[expr, Module]
+       ];
+  
+      num = Numerator[expr];
+      den = Denominator[expr];
+      denoms = expr // GetBareDenoms[#, vars] &;
+  
+      If[denoms === {},
+           Return[expr, Module]
+       ];
+  
+      {q, r} = PolynomialReduce[num, denoms, vars];
+  
+      result = Total[MapThread[#1 #2/den &, {q, denoms}]] + r/den
+  ]
 
-    If[Denominator[expr] === 1 || !PolynomialQ[Numerator[expr], vars],
-        Return[expr, Module]
-    ];
-
-    num = Numerator[expr];
-    den=Denominator[expr];
-    denoms = expr//GetBareDenoms[#, vars]&;
-
-    If[denoms === {},
-        Return[expr, Module]
-    ];
-
-    {q, r} = PolynomialReduce[num, denoms, vars];
-
-    result = Total[MapThread[#1 #2/den &, {q, denoms}]] + r/den
-]
-
-(* Base case: no more bases *)
+(* Iterative via Fold *)
 ExpandNumeratorInDenomSpace[expr_, vars_List, {}] := expr
 
-(* Recursive case *)
-ExpandNumeratorInDenomSpace[expr_, vars_List, bases_List] := Module[
-    {
-        basis, wVars, varsInW, reverseW, result
-    },
+ExpandNumeratorInDenomSpace[expr_, vars_List, bases_List] := 
+    Fold[ExpandNumeratorInDenomSpaceCore[#1, vars, #2] &, expr, bases]
 
-    basis = First[bases];
+(* Core of the function *)
+ClearAll[ExpandNumeratorInDenomSpaceCore]
+
+ExpandNumeratorInDenomSpaceCore[expr_, vars_List, basis_List] := Module[
+    {wVars, varsInW, reverseW, result},
 
     wVars = Table[Unique["w"], {Length[vars]}];
 
@@ -787,11 +786,11 @@ ExpandNumeratorInDenomSpace[expr_, vars_List, bases_List] := Module[
     reverseW = MapThread[Rule, {wVars, basis}];
 
     result = expr /. varsInW // Expand;
-    
-    result = result /. reverseW// ExpandDenominatorTerms;
+    result = result /. reverseW // ExpandDenominatorTerms;
 
-    ExpandNumeratorInDenomSpace[result, vars, Rest[bases]]
+    result
 ]
+
 
 
 (* ::Subsection::Closed:: *)

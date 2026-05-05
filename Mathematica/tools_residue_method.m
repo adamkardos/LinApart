@@ -1,6 +1,6 @@
 (* ::Package:: *)
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*ResidueForLaurentSeries*)
 
 
@@ -101,7 +101,7 @@ ResidueForLaurentSeries[
 	]
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*ResidueForBasis*)
 
 
@@ -414,7 +414,6 @@ ResidueForBasis[restOfFunction_, basisDenoms_List, vars_List] := Module[
         wVars, varsInW,
         terms, records, groups
     },
-
     lengthVars = Length[vars];
 
     wVars = Table[Unique["w"], {lengthVars}];
