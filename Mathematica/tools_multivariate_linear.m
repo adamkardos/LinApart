@@ -234,7 +234,7 @@ FindSafeNullRelations::emptyList = "The `1` list must not be empty.";
 FindSafeNullRelations::tooFewDenoms = "Need at least 2 denominators to find null relations.";
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*EliminateNullRelations*)
 
 
@@ -276,7 +276,7 @@ GetBestDenominatorToReplace[expr_, vars_] := (
 
 
 GetBestDenominatorToReplace[expr_, vars_List] :=
-    expr // GetDenomData[#, vars] & // Part[#, All, 2] & // Ordering
+    expr // GetDenomData[#, vars] & // Part[#, All, 2] & // Ordering // Reverse
 
 
 GetBestDenominatorToReplace::notList = "Second argument `1` must be a list of variables.";
@@ -673,7 +673,7 @@ EliminateNullRelations::affineRelation =
     "Encountered an affine relation `1`. This would not reduce the number of denominators. Skipping to avoid infinite recursion.";
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*ExpandNumeratorInDenomSpace*)
 
 

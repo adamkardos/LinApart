@@ -592,7 +592,7 @@ mathematicaPartialFraction[
     eliminated = EliminateNullRelations[
         keepForDivision * keepFrac, vars, denomOrdering, Unique[dummyD]
     ];
-
+    
     (* Catch failure from EliminateNullRelations. *)
     If[eliminated === $Failed,
         Message[mathematicaPartialFraction::eliminationFailed];
