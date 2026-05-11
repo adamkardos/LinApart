@@ -544,7 +544,6 @@ mathematicaPartialFraction[
 ] := Module[
     {
         tmp,
-        tmpPolynomialPart,
         tmpFractionedPart,
 
         varPat,
@@ -566,20 +565,6 @@ mathematicaPartialFraction[
     varPat = Alternatives @@ vars;
 
     (*
-      Extract polynomial part for improper fractions.
-      For multivariate, Series is applied sequentially in each variable.
-    *)
-    tmpPolynomialPart = If[FreeQ[keepForDivision, varPat],
-        0,
-        coeff * ignoreFrac * (
-            Series[
-                keepForDivision * keepFrac,
-                Sequence @@ ({#, Infinity, 0} & /@ vars)
-            ] // Normal
-        )
-    ];
-
-    (*
       Null relation elimination.
       Compute priority ordering (lowest multiplicity first) and 
       eliminate all null relations recursively.
@@ -592,7 +577,7 @@ mathematicaPartialFraction[
     eliminated = EliminateNullRelations[
         keepForDivision * keepFrac, vars, denomOrdering, Unique[dummyD]
     ];
-    
+
     (* Catch failure from EliminateNullRelations. *)
     If[eliminated === $Failed,
         Message[mathematicaPartialFraction::eliminationFailed];
@@ -633,7 +618,7 @@ mathematicaPartialFraction[
     (* If everything is already decomposed, return early. *)
     If[remainingTerms === {},
         Return[
-            coeff * ignoreFrac * (Plus @@ decomposedTerms) + tmpPolynomialPart
+            coeff * ignoreFrac * (Plus @@ decomposedTerms)
         ]
     ];
     
@@ -665,7 +650,7 @@ mathematicaPartialFraction[
     If[termsWithBases === {},
         (* No terms have valid bases, return everything as decomposed *)
         Return[
-            coeff * ignoreFrac * (Plus @@ decomposedTerms) + tmpPolynomialPart
+            coeff * ignoreFrac * (Plus @@ decomposedTerms)
         ]
     ];
     
@@ -725,8 +710,7 @@ mathematicaPartialFraction[
 
     (* Assemble final result. *)
     coeff * ignoreFrac * (Plus @@ decomposedTerms) + 
-        tmpFractionedPart + 
-        tmpPolynomialPart
+        tmpFractionedPart
 ]/; OptionValue["Method"] === "MultivariateResidue"
 
 mathematicaPartialFraction::eliminationFailed = 
