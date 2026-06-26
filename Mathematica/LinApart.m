@@ -3,7 +3,7 @@
 BeginPackage["LinApart`"]
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Load internal functions*)
 
 
@@ -334,11 +334,37 @@ LinApart[expr_, vars_List, options:OptionsPattern[]] := (
 LinApart[expr_, vars_List, options:OptionsPattern[]] := (
     Message[LinApart::varsNotSymbols, Select[vars, Head[#] =!= Symbol &]];
     $Failed
-) /; !And @@ (Head[#] === Symbol & /@ vars)
+)/; !And @@ Map[(Head[#] === Symbol) &, vars]
 
 LinApart[expr_, vars_List, options:OptionsPattern[]] :=
     LinApart[expr, DeleteDuplicates[vars], options] /;
         Length[vars] =!= Length[DeleteDuplicates[vars]]
+
+LinApart[expr_, vars_List, options:OptionsPattern[]] :=(
+	Print[And @@ Map[(Head[#] === Symbol) &, vars]];
+    Message[LinApart::denomIsOne, Select[vars, Head[#] =!= Symbol &]];
+    $Failed
+)/; Denominator[expr] === 1 && !PolynomialQ[expr,vars] && Head[expr] != Plus
+
+LinApart[expr_Plus, vars_List, options:OptionsPattern[]] := Module[
+    {usedVars, unusedVars},
+
+    usedVars = Intersection[vars, Variables[Map[Denominator,expr]]];
+    unusedVars = Complement[vars, usedVars];
+
+    If[unusedVars =!= {},
+        Message[LinApart::droppingVars, unusedVars];
+    ];
+
+    Which[
+        Length[usedVars] === 0,
+            expr,
+        Length[usedVars] === 1,
+            LinApart[expr, First[usedVars], options],
+        True,
+            LinApart[expr, usedVars, options]
+    ]
+] /; Length[Complement[vars, Variables[Map[Denominator,expr]]]] > 0
 
 LinApart[expr_, vars_List, options:OptionsPattern[]] := Module[
     {usedVars, unusedVars},
@@ -358,7 +384,7 @@ LinApart[expr_, vars_List, options:OptionsPattern[]] := Module[
         True,
             LinApart[expr, usedVars, options]
     ]
-] /; Length[Complement[vars, Variables[Denominator[expr]]]] > 0
+] /; Length[Complement[vars, Variables[Denominator[expr]]]] > 0 && Head[expr]!=Plus && Denominator[expr] != 1
 
 		(* ============================================== *)
 		(*             Option validation                  *)
@@ -583,5 +609,7 @@ LinApart::varsNotSymbols = "The following variables are not Symbols: `1`.";
 LinApart::droppingVars = "Warning: Variables `1` do not appear in denominators and will be ignored.";
 LinApart::protectedVar = "The variable(s) `1` are Protected symbols and cannot be used as decomposition variables.";
 LinApart::infiniteInput = "The expression contains infinity in some form.";
+LinApart::denomIsOne = "The denominator of the expression is one, the function will not ignore unused variables.";
+
 
 EndPackage[];
