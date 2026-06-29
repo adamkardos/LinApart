@@ -12,6 +12,8 @@ Additionally, two general-purpose multivariate methods are available:
 - **Leinartas**: Leinartas' decomposition using polynomial ideal reduction.
 - **Gröbner**: Gröbner basis approach for general polynomial denominators.
 
+A FORM implementation of the multivariate algorithm, **FORMapart**, is also provided for partial fractioning large expressions directly inside FORM-based workflows.
+
 A C language implementation of the univariate linear-denominator algorithm is also provided (standalone executable and linkable library).
 
 If you find this package useful in your research, please cite the relevant article(s).
@@ -37,6 +39,22 @@ Get["$PATHLINAPART/LinApart.m"]
 ```
 
 where $PATHLINAPART is the path to the LinApart/Mathematic folder. The package requires no external dependencies beyond a standard Mathematica installation.
+
+### FORM
+
+The FORM port, **FORMapart**, lives in the `form/src/` directory and consists of two header files: `declare-formapart.h` (symbol, function, and table declarations together with the default flag settings) and `formapart.h` (the procedures, which pulls in the declarations automatically). A user script only needs to include the latter near the top:
+
+```
+#include formapart.h
+```
+
+So that FORM's preprocessor resolves the include without an absolute path, add the `form/src/` directory to the `FORMPATH` environment variable, e.g. in a Bourne-style shell:
+
+```bash
+export FORMPATH="/path/to/LinApart/form/src:$FORMPATH"
+```
+
+with `/path/to/LinApart/form/src` replaced by the location of the cloned `form/src` directory. FORMapart requires [FORM](https://github.com/vermaseren/form) 5.0 or newer.
 
 ### C
 
@@ -133,6 +151,11 @@ Or open `test_correctness.wl` in a Mathematica notebook and evaluate all cells.
 ```
 LinApart/
 ├── Mathematica/          Wolfram Mathematica package source
+├── form/                 FORM port (FORMapart)
+│   ├── src/              FORM headers (declare-formapart.h, formapart.h)
+│   ├── check/            Test suite (run via check.rb)
+│   ├── examples/         Usage examples (FORM scripts)
+│   └── benchmarks/       Benchmark inputs (.frm)
 ├── C/                    C standalone executable and library
 ├── Examples/             Usage examples (Mathematica notebooks)
 ├── Tests/                Test suite (correctness, coverage, profiling)
