@@ -1,5 +1,6 @@
 *{{{ ApartSwapLocalDollarMatrixRows_1 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 local F = 1;
 .sort
@@ -13,33 +14,22 @@ $ri = 1;
 $rj = 2;
 $cf = 1;
 $cl = 3;
-.sort
 *
 #call ApartSwapLocalDollarMatrixRows(mat,s,ri,rj,cf,cl,2,3)
+multiply acc(1,1)*($mat1s1 - 21) + acc(1,2)*($mat1s2 - 22) + acc(1,3)*($mat1s3 - 23) + acc(2,1)*($mat2s1 - 11) + acc(2,2)*($mat2s2 - 12) + acc(2,3)*($mat2s3 - 13);
+ModuleOption,Local,$mat1s1,$mat1s2,$mat1s3,$mat2s1,$mat2s2,$mat2s3,$ri,$rj,$cf,$cl;
 *
-.sort
-*
-local a11 = $mat1s1 - 21;
-local a12 = $mat1s2 - 22;
-local a13 = $mat1s3 - 23;
-local a21 = $mat2s1 - 11;
-local a22 = $mat2s2 - 12;
-local a23 = $mat2s3 - 13;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("a11") =~ expr("0")
-assert result("a12") =~ expr("0")
-assert result("a13") =~ expr("0")
-assert result("a21") =~ expr("0")
-assert result("a22") =~ expr("0")
-assert result("a23") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartSwapLocalDollarMatrixRows_2 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 local F = 1;
 .sort
@@ -53,33 +43,22 @@ $ri = 1;
 $rj = 2;
 $cf = 2;
 $cl = 3;
-.sort
 *
 #call ApartSwapLocalDollarMatrixRows(mat,s,ri,rj,cf,cl,2,3)
+multiply acc(1,1)*($mat1s1 - 11) + acc(2,1)*($mat2s1 - 21) + acc(1,2)*($mat1s2 - 22) + acc(2,2)*($mat2s2 - 12) + acc(1,3)*($mat1s3 - 23) + acc(2,3)*($mat2s3 - 13);
+ModuleOption,Local,$mat1s1,$mat1s2,$mat1s3,$mat2s1,$mat2s2,$mat2s3,$ri,$rj,$cf,$cl;
 *
-.sort
-*
-local a11 = $mat1s1 - 11;
-local a21 = $mat2s1 - 21;
-local a12 = $mat1s2 - 22;
-local a22 = $mat2s2 - 12;
-local a13 = $mat1s3 - 23;
-local a23 = $mat2s3 - 13;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("a11") =~ expr("0")
-assert result("a21") =~ expr("0")
-assert result("a12") =~ expr("0")
-assert result("a22") =~ expr("0")
-assert result("a13") =~ expr("0")
-assert result("a23") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartSwapLocalDollarMatrixRows_3 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 local F = 1;
 .sort
@@ -93,33 +72,22 @@ $ri = 2;
 $rj = 2;
 $cf = 1;
 $cl = 3;
-.sort
 *
 #call ApartSwapLocalDollarMatrixRows(mat,s,ri,rj,cf,cl,2,3)
+multiply acc(1,1)*($mat1s1 - 11) + acc(1,2)*($mat1s2 - 12) + acc(1,3)*($mat1s3 - 13) + acc(2,1)*($mat2s1 - 21) + acc(2,2)*($mat2s2 - 22) + acc(2,3)*($mat2s3 - 23);
+ModuleOption,Local,$mat1s1,$mat1s2,$mat1s3,$mat2s1,$mat2s2,$mat2s3,$ri,$rj,$cf,$cl;
 *
-.sort
-*
-local a11 = $mat1s1 - 11;
-local a12 = $mat1s2 - 12;
-local a13 = $mat1s3 - 13;
-local a21 = $mat2s1 - 21;
-local a22 = $mat2s2 - 22;
-local a23 = $mat2s3 - 23;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("a11") =~ expr("0")
-assert result("a12") =~ expr("0")
-assert result("a13") =~ expr("0")
-assert result("a21") =~ expr("0")
-assert result("a22") =~ expr("0")
-assert result("a23") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartSwapLocalDollarMatrixRows_4 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 local F = 1;
 .sort
@@ -133,33 +101,22 @@ $ri = 1;
 $rj = 2;
 $cf = 2;
 $cl = 2;
-.sort
 *
 #call ApartSwapLocalDollarMatrixRows(mat,s,ri,rj,cf,cl,2,3)
+multiply acc(1,1)*($mat1s1 - 11) + acc(2,1)*($mat2s1 - 21) + acc(1,2)*($mat1s2 - 22) + acc(2,2)*($mat2s2 - 12) + acc(1,3)*($mat1s3 - 13) + acc(2,3)*($mat2s3 - 23);
+ModuleOption,Local,$mat1s1,$mat1s2,$mat1s3,$mat2s1,$mat2s2,$mat2s3,$ri,$rj,$cf,$cl;
 *
-.sort
-*
-local a11 = $mat1s1 - 11;
-local a21 = $mat2s1 - 21;
-local a12 = $mat1s2 - 22;
-local a22 = $mat2s2 - 12;
-local a13 = $mat1s3 - 13;
-local a23 = $mat2s3 - 23;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("a11") =~ expr("0")
-assert result("a21") =~ expr("0")
-assert result("a12") =~ expr("0")
-assert result("a22") =~ expr("0")
-assert result("a13") =~ expr("0")
-assert result("a23") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartSwapLocalDollarMatrixRows_5 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 symbol ep;
 local F = 1;
@@ -172,29 +129,22 @@ $ri = 1;
 $rj = 2;
 $cf = 1;
 $cl = 2;
-.sort
 *
 #call ApartSwapLocalDollarMatrixRows(mat,s,ri,rj,cf,cl,2,2)
+multiply acc(1,1)*($mat1s1 - (1-ep)) + acc(1,2)*($mat1s2 - 2*ep) + acc(2,1)*($mat2s1 - ep) + acc(2,2)*($mat2s2 - ep^2);
+ModuleOption,Local,$mat1s1,$mat1s2,$mat2s1,$mat2s2,$ri,$rj,$cf,$cl;
 *
-.sort
-*
-local a11 = $mat1s1 - (1-ep);
-local a12 = $mat1s2 - 2*ep;
-local a21 = $mat2s1 - ep;
-local a22 = $mat2s2 - ep^2;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("a11") =~ expr("0")
-assert result("a12") =~ expr("0")
-assert result("a21") =~ expr("0")
-assert result("a22") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartSwapLocalDollarMatrixRows_6 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 local F = 1;
 .sort
@@ -211,39 +161,23 @@ $ri = 1;
 $rj = 3;
 $cf = 1;
 $cl = 3;
-.sort
 *
 #call ApartSwapLocalDollarMatrixRows(mat,s,ri,rj,cf,cl,3,3)
+multiply acc(1,1)*($mat1s1 - 31) + acc(1,2)*($mat1s2 - 32) + acc(1,3)*($mat1s3 - 33) + acc(2,1)*($mat2s1 - 21) + acc(2,2)*($mat2s2 - 22) + acc(2,3)*($mat2s3 - 23) +
+    acc(3,1)*($mat3s1 - 11) + acc(3,2)*($mat3s2 - 12) + acc(3,3)*($mat3s3 - 13);
+ModuleOption,Local,$mat1s1,$mat1s2,$mat1s3,$mat2s1,$mat2s2,$mat2s3,$mat3s1,$mat3s2,$mat3s3,$ri,$rj,$cf,$cl;
 *
-.sort
-*
-local a11 = $mat1s1 - 31;
-local a12 = $mat1s2 - 32;
-local a13 = $mat1s3 - 33;
-local a21 = $mat2s1 - 21;
-local a22 = $mat2s2 - 22;
-local a23 = $mat2s3 - 23;
-local a31 = $mat3s1 - 11;
-local a32 = $mat3s2 - 12;
-local a33 = $mat3s3 - 13;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("a11") =~ expr("0")
-assert result("a12") =~ expr("0")
-assert result("a13") =~ expr("0")
-assert result("a21") =~ expr("0")
-assert result("a22") =~ expr("0")
-assert result("a23") =~ expr("0")
-assert result("a31") =~ expr("0")
-assert result("a32") =~ expr("0")
-assert result("a33") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartSwapLocalDollarMatrixRows_7 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 local F = 1;
 .sort
@@ -260,39 +194,23 @@ $ri = 1;
 $rj = 3;
 $cf = 2;
 $cl = 3;
-.sort
 *
 #call ApartSwapLocalDollarMatrixRows(mat,s,ri,rj,cf,cl,3,3)
+multiply acc(1,1)*($mat1s1 - 11) + acc(1,2)*($mat1s2 - 32) + acc(1,3)*($mat1s3 - 33) + acc(2,1)*($mat2s1 - 21) + acc(2,2)*($mat2s2 - 22) + acc(2,3)*($mat2s3 - 23) +
+    acc(3,1)*($mat3s1 - 31) + acc(3,2)*($mat3s2 - 12) + acc(3,3)*($mat3s3 - 13);
+ModuleOption,Local,$mat1s1,$mat1s2,$mat1s3,$mat2s1,$mat2s2,$mat2s3,$mat3s1,$mat3s2,$mat3s3,$ri,$rj,$cf,$cl;
 *
-.sort
-*
-local a11 = $mat1s1 - 11;
-local a12 = $mat1s2 - 32;
-local a13 = $mat1s3 - 33;
-local a21 = $mat2s1 - 21;
-local a22 = $mat2s2 - 22;
-local a23 = $mat2s3 - 23;
-local a31 = $mat3s1 - 31;
-local a32 = $mat3s2 - 12;
-local a33 = $mat3s3 - 13;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("a11") =~ expr("0")
-assert result("a12") =~ expr("0")
-assert result("a13") =~ expr("0")
-assert result("a21") =~ expr("0")
-assert result("a22") =~ expr("0")
-assert result("a23") =~ expr("0")
-assert result("a31") =~ expr("0")
-assert result("a32") =~ expr("0")
-assert result("a33") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartSwapLocalDollarMatrixRows_8 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 local F = 1;
 .sort
@@ -306,33 +224,22 @@ $ri = 1;
 $rj = 2;
 $cf = 1;
 $cl = 3;
-.sort
 *
 #call ApartSwapLocalDollarMatrixRows(mat,c,ri,rj,cf,cl,2,3)
+multiply acc(1,1)*($mat1c1 - 21) + acc(1,2)*($mat1c2 - 22) + acc(1,3)*($mat1c3 - 23) + acc(2,1)*($mat2c1 - 11) + acc(2,2)*($mat2c2 - 12) + acc(2,3)*($mat2c3 - 13);
+ModuleOption,Local,$mat1c1,$mat1c2,$mat1c3,$mat2c1,$mat2c2,$mat2c3,$ri,$rj,$cf,$cl;
 *
-.sort
-*
-local a11 = $mat1c1 - 21;
-local a12 = $mat1c2 - 22;
-local a13 = $mat1c3 - 23;
-local a21 = $mat2c1 - 11;
-local a22 = $mat2c2 - 12;
-local a23 = $mat2c3 - 13;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("a11") =~ expr("0")
-assert result("a12") =~ expr("0")
-assert result("a13") =~ expr("0")
-assert result("a21") =~ expr("0")
-assert result("a22") =~ expr("0")
-assert result("a23") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartSwapLocalDollarMatrixRows_9 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 local F = 1;
 .sort
@@ -349,39 +256,23 @@ $ri = 3;
 $rj = 1;
 $cf = 1;
 $cl = 3;
-.sort
 *
 #call ApartSwapLocalDollarMatrixRows(mat,s,ri,rj,cf,cl,3,3)
+multiply acc(1,1)*($mat1s1 - 31) + acc(1,2)*($mat1s2 - 32) + acc(1,3)*($mat1s3 - 33) + acc(2,1)*($mat2s1 - 21) + acc(2,2)*($mat2s2 - 22) + acc(2,3)*($mat2s3 - 23) +
+    acc(3,1)*($mat3s1 - 11) + acc(3,2)*($mat3s2 - 12) + acc(3,3)*($mat3s3 - 13);
+ModuleOption,Local,$mat1s1,$mat1s2,$mat1s3,$mat2s1,$mat2s2,$mat2s3,$mat3s1,$mat3s2,$mat3s3,$ri,$rj,$cf,$cl;
 *
-.sort
-*
-local a11 = $mat1s1 - 31;
-local a12 = $mat1s2 - 32;
-local a13 = $mat1s3 - 33;
-local a21 = $mat2s1 - 21;
-local a22 = $mat2s2 - 22;
-local a23 = $mat2s3 - 23;
-local a31 = $mat3s1 - 11;
-local a32 = $mat3s2 - 12;
-local a33 = $mat3s3 - 13;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("a11") =~ expr("0")
-assert result("a12") =~ expr("0")
-assert result("a13") =~ expr("0")
-assert result("a21") =~ expr("0")
-assert result("a22") =~ expr("0")
-assert result("a23") =~ expr("0")
-assert result("a31") =~ expr("0")
-assert result("a32") =~ expr("0")
-assert result("a33") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartSwapLocalDollarMatrixRows_10 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 local F = 1;
 .sort
@@ -399,41 +290,23 @@ $ri = 1;
 $rj = 2;
 $cf = 2;
 $cl = 4;
-.sort
 *
 #call ApartSwapLocalDollarMatrixRows(mat,s,ri,rj,cf,cl,2,5)
+multiply acc(1,1)*($mat1s1 - 11) + acc(1,5)*($mat1s5 - 15) + acc(2,1)*($mat2s1 - 21) + acc(2,5)*($mat2s5 - 25) + acc(1,2)*($mat1s2 - 22) + acc(1,3)*($mat1s3 - 23) +
+    acc(1,4)*($mat1s4 - 24) + acc(2,2)*($mat2s2 - 12) + acc(2,3)*($mat2s3 - 13) + acc(2,4)*($mat2s4 - 14);
+ModuleOption,Local,$mat1s1,$mat1s2,$mat1s3,$mat1s4,$mat1s5,$mat2s1,$mat2s2,$mat2s3,$mat2s4,$mat2s5,$ri,$rj,$cf,$cl;
 *
-.sort
-*
-local a11 = $mat1s1 - 11;
-local a15 = $mat1s5 - 15;
-local a21 = $mat2s1 - 21;
-local a25 = $mat2s5 - 25;
-local a12 = $mat1s2 - 22;
-local a13 = $mat1s3 - 23;
-local a14 = $mat1s4 - 24;
-local a22 = $mat2s2 - 12;
-local a23 = $mat2s3 - 13;
-local a24 = $mat2s4 - 14;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("a11") =~ expr("0")
-assert result("a15") =~ expr("0")
-assert result("a21") =~ expr("0")
-assert result("a25") =~ expr("0")
-assert result("a12") =~ expr("0")
-assert result("a13") =~ expr("0")
-assert result("a14") =~ expr("0")
-assert result("a22") =~ expr("0")
-assert result("a23") =~ expr("0")
-assert result("a24") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartSwapLocalDollarMatrixRows_11 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 local F = 1;
 .sort
@@ -465,41 +338,24 @@ $ri = 1;
 $rj = 2;
 $cf = 1;
 $cl = 12;
-.sort
 *
 #call ApartSwapLocalDollarMatrixRows(mat,s,ri,rj,cf,cl,2,12)
+multiply acc(1,1)*($mat1s1 - 21) + acc(1,9)*($mat1s9 - 29) + acc(1,10)*($mat1s10 - 30) + acc(1,11)*($mat1s11 - 31) + acc(1,12)*($mat1s12 - 32) + acc(2,1)*($mat2s1 - 11) +
+    acc(2,9)*($mat2s9 - 19) + acc(2,10)*($mat2s10 - 20) + acc(2,11)*($mat2s11 - 21) + acc(2,12)*($mat2s12 - 22);
+ModuleOption,Local,$mat1s1,$mat1s2,$mat1s3,$mat1s4,$mat1s5,$mat1s6,$mat1s7,$mat1s8,$mat1s9,$mat1s10,$mat1s11,$mat1s12,$mat2s1,$mat2s2,$mat2s3,$mat2s4,$mat2s5,$mat2s6,$mat2s7,
+    $mat2s8,$mat2s9,$mat2s10,$mat2s11,$mat2s12,$ri,$rj,$cf,$cl;
 *
-.sort
-*
-local a11 = $mat1s1 - 21;
-local a19 = $mat1s9 - 29;
-local a110 = $mat1s10 - 30;
-local a111 = $mat1s11 - 31;
-local a112 = $mat1s12 - 32;
-local a21 = $mat2s1 - 11;
-local a29 = $mat2s9 - 19;
-local a210 = $mat2s10 - 20;
-local a211 = $mat2s11 - 21;
-local a212 = $mat2s12 - 22;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("a11") =~ expr("0")
-assert result("a19") =~ expr("0")
-assert result("a110") =~ expr("0")
-assert result("a111") =~ expr("0")
-assert result("a112") =~ expr("0")
-assert result("a21") =~ expr("0")
-assert result("a29") =~ expr("0")
-assert result("a210") =~ expr("0")
-assert result("a211") =~ expr("0")
-assert result("a212") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartSwapLocalDollarMatrixRows_12 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 local F = 1;
 .sort
@@ -519,31 +375,22 @@ $ri = 1;
 $rj = 12;
 $cf = 1;
 $cl = 1;
-.sort
 *
 #call ApartSwapLocalDollarMatrixRows(mat,s,ri,rj,cf,cl,12,1)
+multiply acc(1,1)*($mat1s1 - 121) + acc(12,1)*($mat12s1 - 11) + acc(2,1)*($mat2s1 - 21) + acc(6,1)*($mat6s1 - 61) + acc(11,1)*($mat11s1 - 111);
+ModuleOption,Local,$mat1s1,$mat2s1,$mat3s1,$mat4s1,$mat5s1,$mat6s1,$mat7s1,$mat8s1,$mat9s1,$mat10s1,$mat11s1,$mat12s1,$ri,$rj,$cf,$cl;
 *
-.sort
-*
-local a1 = $mat1s1 - 121;
-local a12 = $mat12s1 - 11;
-local a2 = $mat2s1 - 21;
-local a6 = $mat6s1 - 61;
-local a11 = $mat11s1 - 111;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("a1") =~ expr("0")
-assert result("a12") =~ expr("0")
-assert result("a2") =~ expr("0")
-assert result("a6") =~ expr("0")
-assert result("a11") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartSwapLocalDollarMatrixRows_13 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 symbol ep;
 local F = 1;
@@ -558,33 +405,22 @@ $ri = 1;
 $rj = 2;
 $cf = 2;
 $cl = 3;
-.sort
 *
 #call ApartSwapLocalDollarMatrixRows(mat,s,ri,rj,cf,cl,2,3)
+multiply acc(1,1)*($mat1s1 - ep) + acc(2,1)*($mat2s1 - 3) + acc(1,2)*($mat1s2 - 2*ep) + acc(2,2)*($mat2s2 - 1/2) + acc(1,3)*($mat1s3 - 5/7) + acc(2,3)*($mat2s3 - (ep^2-1));
+ModuleOption,Local,$mat1s1,$mat1s2,$mat1s3,$mat2s1,$mat2s2,$mat2s3,$ri,$rj,$cf,$cl;
 *
-.sort
-*
-local a11 = $mat1s1 - ep;
-local a21 = $mat2s1 - 3;
-local a12 = $mat1s2 - 2*ep;
-local a22 = $mat2s2 - 1/2;
-local a13 = $mat1s3 - 5/7;
-local a23 = $mat2s3 - (ep^2-1);
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("a11") =~ expr("0")
-assert result("a21") =~ expr("0")
-assert result("a12") =~ expr("0")
-assert result("a22") =~ expr("0")
-assert result("a13") =~ expr("0")
-assert result("a23") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartSwapLocalDollarMatrixRows_14 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 local F = 1;
 .sort
@@ -596,29 +432,22 @@ $ri = 1;
 $rj = 2;
 $cf = 1;
 $cl = 2;
-.sort
 *
 #call ApartSwapLocalDollarMatrixRows(mat,s,ri,rj,cf,cl,2,2)
+multiply acc(1,1)*($mat1s1 + 7) + acc(1,2)*($mat1s2 + 8) + acc(2,1)*($mat2s1 + 5) + acc(2,2)*($mat2s2 + 6);
+ModuleOption,Local,$mat1s1,$mat1s2,$mat2s1,$mat2s2,$ri,$rj,$cf,$cl;
 *
-.sort
-*
-local a11 = $mat1s1 + 7;
-local a12 = $mat1s2 + 8;
-local a21 = $mat2s1 + 5;
-local a22 = $mat2s2 + 6;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("a11") =~ expr("0")
-assert result("a12") =~ expr("0")
-assert result("a21") =~ expr("0")
-assert result("a22") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartSwapLocalDollarMatrixRows_15 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 local F = 1;
 .sort
@@ -632,33 +461,22 @@ $ri = 1;
 $rj = 2;
 $cf = 2;
 $cl = 3;
-.sort
 *
 #call ApartSwapLocalDollarMatrixRows(mat,s,ri,rj,cf,cl,2,3)
+multiply acc(1,1)*($mat1s1 - 9) + acc(1,2)*($mat1s2 + 1) + acc(1,3)*($mat1s3 + 1) + acc(2,1)*($mat2s1 - 8) + acc(2,2)*($mat2s2) + acc(2,3)*($mat2s3 - 1);
+ModuleOption,Local,$mat1s1,$mat1s2,$mat1s3,$mat2s1,$mat2s2,$mat2s3,$ri,$rj,$cf,$cl;
 *
-.sort
-*
-local a11 = $mat1s1 - 9;
-local a12 = $mat1s2 + 1;
-local a13 = $mat1s3 + 1;
-local a21 = $mat2s1 - 8;
-local a22 = $mat2s2;
-local a23 = $mat2s3 - 1;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("a11") =~ expr("0")
-assert result("a12") =~ expr("0")
-assert result("a13") =~ expr("0")
-assert result("a21") =~ expr("0")
-assert result("a22") =~ expr("0")
-assert result("a23") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartSwapLocalDollarMatrixRows_16 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 local F = 1;
 .sort
@@ -672,33 +490,22 @@ $ri = 1;
 $rj = 2;
 $cf = 2;
 $cl = 3;
-.sort
 *
 #call ApartSwapLocalDollarMatrixRows(mat,s,ri,rj,cf,cl,2,3)
+multiply acc(1,1)*($mat1s1 - 7) + acc(1,2)*($mat1s2 + 3) + acc(1,3)*($mat1s3 + 3) + acc(2,1)*($mat2s1 - 6) + acc(2,2)*($mat2s2) + acc(2,3)*($mat2s3 - 2);
+ModuleOption,Local,$mat1s1,$mat1s2,$mat1s3,$mat2s1,$mat2s2,$mat2s3,$ri,$rj,$cf,$cl;
 *
-.sort
-*
-local a11 = $mat1s1 - 7;
-local a12 = $mat1s2 + 3;
-local a13 = $mat1s3 + 3;
-local a21 = $mat2s1 - 6;
-local a22 = $mat2s2;
-local a23 = $mat2s3 - 2;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("a11") =~ expr("0")
-assert result("a12") =~ expr("0")
-assert result("a13") =~ expr("0")
-assert result("a21") =~ expr("0")
-assert result("a22") =~ expr("0")
-assert result("a23") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartSwapLocalDollarMatrixRows_17 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 local F = 1;
 .sort
@@ -715,33 +522,16 @@ $ri = 2;
 $rj = 3;
 $cf = 2;
 $cl = 3;
-.sort
 *
 #call ApartSwapLocalDollarMatrixRows(mat,s,ri,rj,cf,cl,3,3)
+multiply acc(1,1)*($mat1s1 - 1) + acc(1,2)*($mat1s2 - 1) + acc(1,3)*($mat1s3 - 1) + acc(2,1)*($mat2s1 - 5) + acc(2,2)*($mat2s2 + 1) + acc(2,3)*($mat2s3 + 1) +
+    acc(3,1)*($mat3s1 - 6) + acc(3,2)*($mat3s2) + acc(3,3)*($mat3s3 - 1);
+ModuleOption,Local,$mat1s1,$mat1s2,$mat1s3,$mat2s1,$mat2s2,$mat2s3,$mat3s1,$mat3s2,$mat3s3,$ri,$rj,$cf,$cl;
 *
-.sort
-*
-local a11 = $mat1s1 - 1;
-local a12 = $mat1s2 - 1;
-local a13 = $mat1s3 - 1;
-local a21 = $mat2s1 - 5;
-local a22 = $mat2s2 + 1;
-local a23 = $mat2s3 + 1;
-local a31 = $mat3s1 - 6;
-local a32 = $mat3s2;
-local a33 = $mat3s3 - 1;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("a11") =~ expr("0")
-assert result("a12") =~ expr("0")
-assert result("a13") =~ expr("0")
-assert result("a21") =~ expr("0")
-assert result("a22") =~ expr("0")
-assert result("a23") =~ expr("0")
-assert result("a31") =~ expr("0")
-assert result("a32") =~ expr("0")
-assert result("a33") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
