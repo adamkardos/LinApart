@@ -1,5 +1,6 @@
 *{{{ ApartLoadBasisDenominatorsToDollars_1 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 *
@@ -10,25 +11,19 @@ local F = Basis(1,2);
 .sort
 *
 #call ApartLoadBasisDenominatorsToDollars(BasisDen,Basis,aux,APdensSet,n,2)
-*
-.sort
-*
-local diff = F - Basis(1,2);
-local d1 = $BasisDen1 - APd1;
-local d2 = $BasisDen2 - APd2;
+id Basis(1,2) = acc(1)*($BasisDen1 - APd1) + acc(2)*($BasisDen2 - APd2);
 *
 .sort
 *
 print +ss;
 .end
 assert succeeded?
-assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartLoadBasisDenominatorsToDollars_2 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 *
@@ -39,25 +34,19 @@ local F = Basis(1,3);
 .sort
 *
 #call ApartLoadBasisDenominatorsToDollars(BasisDen,Basis,aux,APdensSet,n,2)
-*
-.sort
-*
-local diff = F - Basis(1,3);
-local d1 = $BasisDen1 - APd1;
-local d2 = $BasisDen2 - APd3;
+id Basis(1,3) = acc(1)*($BasisDen1 - APd1) + acc(2)*($BasisDen2 - APd3);
 *
 .sort
 *
 print +ss;
 .end
 assert succeeded?
-assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartLoadBasisDenominatorsToDollars_3 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 *
@@ -68,25 +57,19 @@ local F = Basis(3,1);
 .sort
 *
 #call ApartLoadBasisDenominatorsToDollars(BasisDen,Basis,aux,APdensSet,n,2)
-*
-.sort
-*
-local diff = F - Basis(3,1);
-local d1 = $BasisDen1 - APd3;
-local d2 = $BasisDen2 - APd1;
+id Basis(3,1) = acc(1)*($BasisDen1 - APd3) + acc(2)*($BasisDen2 - APd1);
 *
 .sort
 *
 print +ss;
 .end
 assert succeeded?
-assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartLoadBasisDenominatorsToDollars_4 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 *
@@ -97,25 +80,19 @@ local F = Basis(7,9);
 .sort
 *
 #call ApartLoadBasisDenominatorsToDollars(BasisDen,Basis,aux,APdensSet,n,2)
-*
-.sort
-*
-local diff = F - Basis(7,9);
-local d1 = $BasisDen1 - APd7;
-local d2 = $BasisDen2 - APd9;
+id Basis(7,9) = acc(1)*($BasisDen1 - APd7) + acc(2)*($BasisDen2 - APd9);
 *
 .sort
 *
 print +ss;
 .end
 assert succeeded?
-assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartLoadBasisDenominatorsToDollars_5 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "3"
 *
@@ -126,27 +103,19 @@ local F = Basis(1,2,3);
 .sort
 *
 #call ApartLoadBasisDenominatorsToDollars(BasisDen,Basis,aux,APdensSet,n,3)
-*
-.sort
-*
-local diff = F - Basis(1,2,3);
-local d1 = $BasisDen1 - APd1;
-local d2 = $BasisDen2 - APd2;
-local d3 = $BasisDen3 - APd3;
+id Basis(1,2,3) = acc(1)*($BasisDen1 - APd1) + acc(2)*($BasisDen2 - APd2) + acc(3)*($BasisDen3 - APd3);
 *
 .sort
 *
 print +ss;
 .end
 assert succeeded?
-assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
-assert result("d3") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartLoadBasisDenominatorsToDollars_6 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "3"
 *
@@ -157,27 +126,19 @@ local F = Basis(4,2,5);
 .sort
 *
 #call ApartLoadBasisDenominatorsToDollars(BasisDen,Basis,aux,APdensSet,n,3)
-*
-.sort
-*
-local diff = F - Basis(4,2,5);
-local d1 = $BasisDen1 - APd4;
-local d2 = $BasisDen2 - APd2;
-local d3 = $BasisDen3 - APd5;
+id Basis(4,2,5) = acc(1)*($BasisDen1 - APd4) + acc(2)*($BasisDen2 - APd2) + acc(3)*($BasisDen3 - APd5);
 *
 .sort
 *
 print +ss;
 .end
 assert succeeded?
-assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
-assert result("d3") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartLoadBasisDenominatorsToDollars_7 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "4"
 *
@@ -188,29 +149,19 @@ local F = Basis(1,2,3,4);
 .sort
 *
 #call ApartLoadBasisDenominatorsToDollars(BasisDen,Basis,aux,APdensSet,n,4)
-*
-.sort
-*
-local diff = F - Basis(1,2,3,4);
-local d1 = $BasisDen1 - APd1;
-local d2 = $BasisDen2 - APd2;
-local d3 = $BasisDen3 - APd3;
-local d4 = $BasisDen4 - APd4;
+id Basis(1,2,3,4) = acc(1)*($BasisDen1 - APd1) + acc(2)*($BasisDen2 - APd2) + acc(3)*($BasisDen3 - APd3) + acc(4)*($BasisDen4 - APd4);
 *
 .sort
 *
 print +ss;
 .end
 assert succeeded?
-assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
-assert result("d3") =~ expr("0")
-assert result("d4") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartLoadBasisDenominatorsToDollars_8 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "1"
 *
@@ -221,23 +172,19 @@ local F = Basis(2);
 .sort
 *
 #call ApartLoadBasisDenominatorsToDollars(BasisDen,Basis,aux,APdensSet,n,1)
-*
-.sort
-*
-local diff = F - Basis(2);
-local d1 = $BasisDen1 - APd2;
+id Basis(2) = acc(1)*($BasisDen1 - APd2);
 *
 .sort
 *
 print +ss;
 .end
 assert succeeded?
-assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartLoadBasisDenominatorsToDollars_9 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 *
@@ -248,25 +195,19 @@ local F = 7*Basis(2,3);
 .sort
 *
 #call ApartLoadBasisDenominatorsToDollars(BasisDen,Basis,aux,APdensSet,n,2)
-*
-.sort
-*
-local diff = F - 7*Basis(2,3);
-local d1 = $BasisDen1 - APd2;
-local d2 = $BasisDen2 - APd3;
+id Basis(2,3) = acc(1)*($BasisDen1 - APd2) + acc(2)*($BasisDen2 - APd3);
 *
 .sort
 *
 print +ss;
 .end
 assert succeeded?
-assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartLoadBasisDenominatorsToDollars_10 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 *
@@ -278,21 +219,14 @@ local F = x^2*y*APd5*Basis(1,4);
 .sort
 *
 #call ApartLoadBasisDenominatorsToDollars(BasisDen,Basis,aux,APdensSet,n,2)
-*
-.sort
-*
-local diff = F - x^2*y*APd5*Basis(1,4);
-local d1 = $BasisDen1 - APd1;
-local d2 = $BasisDen2 - APd4;
+id Basis(1,4) = acc(1)*($BasisDen1 - APd1) + acc(2)*($BasisDen2 - APd4);
 *
 .sort
 *
 print +ss;
 .end
 assert succeeded?
-assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartLoadBasisDenominatorsToDollars_11 :

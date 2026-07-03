@@ -1,5 +1,6 @@
 *{{{ ApartLoadMultiplicitiesToDollars_1 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 *
@@ -10,23 +11,20 @@ $BasisDen1 = APd1;
 $BasisDen2 = APd2;
 *
 #call ApartLoadMultiplicitiesToDollars(BasisDen,Multiplicity,2)
+multiply acc(1)*($Multiplicity1 - 1) + acc(2)*($Multiplicity2 - 1);
 *
-.sort
-*
-local m1 = $Multiplicity1 - 1;
-local m2 = $Multiplicity2 - 1;
-*
+ModuleOption,Local,$BasisDen1,$BasisDen2;
 .sort
 *
 print +ss;
 .end
 assert succeeded?
-assert result("m1") =~ expr("0")
-assert result("m2") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartLoadMultiplicitiesToDollars_2 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 *
@@ -37,23 +35,20 @@ $BasisDen1 = APd1;
 $BasisDen2 = APd2;
 *
 #call ApartLoadMultiplicitiesToDollars(BasisDen,Multiplicity,2)
+multiply acc(1)*($Multiplicity1 - 2) + acc(2)*($Multiplicity2 - 3);
 *
-.sort
-*
-local m1 = $Multiplicity1 - 2;
-local m2 = $Multiplicity2 - 3;
-*
+ModuleOption,Local,$BasisDen1,$BasisDen2;
 .sort
 *
 print +ss;
 .end
 assert succeeded?
-assert result("m1") =~ expr("0")
-assert result("m2") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartLoadMultiplicitiesToDollars_3 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 *
@@ -64,23 +59,20 @@ $BasisDen1 = APd1;
 $BasisDen2 = APd2;
 *
 #call ApartLoadMultiplicitiesToDollars(BasisDen,Multiplicity,2)
+multiply acc(1)*($Multiplicity1 - 4) + acc(2)*($Multiplicity2 - 1);
 *
-.sort
-*
-local m1 = $Multiplicity1 - 4;
-local m2 = $Multiplicity2 - 1;
-*
+ModuleOption,Local,$BasisDen1,$BasisDen2;
 .sort
 *
 print +ss;
 .end
 assert succeeded?
-assert result("m1") =~ expr("0")
-assert result("m2") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartLoadMultiplicitiesToDollars_4 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 *
@@ -91,23 +83,20 @@ $BasisDen1 = APd3;
 $BasisDen2 = APd7;
 *
 #call ApartLoadMultiplicitiesToDollars(BasisDen,Multiplicity,2)
+multiply acc(1)*($Multiplicity1 - 2) + acc(2)*($Multiplicity2 - 5);
 *
-.sort
-*
-local m1 = $Multiplicity1 - 2;
-local m2 = $Multiplicity2 - 5;
-*
+ModuleOption,Local,$BasisDen1,$BasisDen2;
 .sort
 *
 print +ss;
 .end
 assert succeeded?
-assert result("m1") =~ expr("0")
-assert result("m2") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartLoadMultiplicitiesToDollars_5 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 *
@@ -120,23 +109,20 @@ $BasisDen1 = APd1;
 $BasisDen2 = APd2;
 *
 #call ApartLoadMultiplicitiesToDollars(BasisDen,Multiplicity,2)
+multiply acc(1)*($Multiplicity1 - 2) + acc(2)*($Multiplicity2 - 1);
 *
-.sort
-*
-local m1 = $Multiplicity1 - 2;
-local m2 = $Multiplicity2 - 1;
-*
+ModuleOption,Local,$BasisDen1,$BasisDen2;
 .sort
 *
 print +ss;
 .end
 assert succeeded?
-assert result("m1") =~ expr("0")
-assert result("m2") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartLoadMultiplicitiesToDollars_6 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 *
@@ -147,23 +133,20 @@ $BasisDen1 = APd1;
 $BasisDen2 = APd2;
 *
 #call ApartLoadMultiplicitiesToDollars(BasisDen,Multiplicity,2)
+multiply acc(1)*($Multiplicity1 - 0) + acc(2)*($Multiplicity2 - 3);
 *
-.sort
-*
-local m1 = $Multiplicity1 - 0;
-local m2 = $Multiplicity2 - 3;
-*
+ModuleOption,Local,$BasisDen1,$BasisDen2;
 .sort
 *
 print +ss;
 .end
 assert succeeded?
-assert result("m1") =~ expr("0")
-assert result("m2") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartLoadMultiplicitiesToDollars_7 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 *
@@ -176,23 +159,20 @@ $BasisDen1 = APd1;
 $BasisDen2 = APd2;
 *
 #call ApartLoadMultiplicitiesToDollars(BasisDen,Multiplicity,2)
+multiply acc(1)*($Multiplicity1 - 0) + acc(2)*($Multiplicity2 - 0);
 *
-.sort
-*
-local m1 = $Multiplicity1 - 0;
-local m2 = $Multiplicity2 - 0;
-*
+ModuleOption,Local,$BasisDen1,$BasisDen2;
 .sort
 *
 print +ss;
 .end
 assert succeeded?
-assert result("m1") =~ expr("0")
-assert result("m2") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartLoadMultiplicitiesToDollars_8 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "3"
 *
@@ -204,25 +184,20 @@ $BasisDen2 = APd2;
 $BasisDen3 = APd3;
 *
 #call ApartLoadMultiplicitiesToDollars(BasisDen,Multiplicity,3)
+multiply acc(1)*($Multiplicity1 - 1) + acc(2)*($Multiplicity2 - 2) + acc(3)*($Multiplicity3 - 3);
 *
-.sort
-*
-local m1 = $Multiplicity1 - 1;
-local m2 = $Multiplicity2 - 2;
-local m3 = $Multiplicity3 - 3;
-*
+ModuleOption,Local,$BasisDen1,$BasisDen2,$BasisDen3;
 .sort
 *
 print +ss;
 .end
 assert succeeded?
-assert result("m1") =~ expr("0")
-assert result("m2") =~ expr("0")
-assert result("m3") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartLoadMultiplicitiesToDollars_9 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "3"
 *
@@ -234,25 +209,20 @@ $BasisDen2 = APd2;
 $BasisDen3 = APd5;
 *
 #call ApartLoadMultiplicitiesToDollars(BasisDen,Multiplicity,3)
+multiply acc(1)*($Multiplicity1 - 3) + acc(2)*($Multiplicity2 - 1) + acc(3)*($Multiplicity3 - 2);
 *
-.sort
-*
-local m1 = $Multiplicity1 - 3;
-local m2 = $Multiplicity2 - 1;
-local m3 = $Multiplicity3 - 2;
-*
+ModuleOption,Local,$BasisDen1,$BasisDen2,$BasisDen3;
 .sort
 *
 print +ss;
 .end
 assert succeeded?
-assert result("m1") =~ expr("0")
-assert result("m2") =~ expr("0")
-assert result("m3") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartLoadMultiplicitiesToDollars_10 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "4"
 *
@@ -265,27 +235,20 @@ $BasisDen3 = APd3;
 $BasisDen4 = APd4;
 *
 #call ApartLoadMultiplicitiesToDollars(BasisDen,Multiplicity,4)
+multiply acc(1)*($Multiplicity1 - 1) + acc(2)*($Multiplicity2 - 1) + acc(3)*($Multiplicity3 - 1) + acc(4)*($Multiplicity4 - 1);
 *
-.sort
-*
-local m1 = $Multiplicity1 - 1;
-local m2 = $Multiplicity2 - 1;
-local m3 = $Multiplicity3 - 1;
-local m4 = $Multiplicity4 - 1;
-*
+ModuleOption,Local,$BasisDen1,$BasisDen2,$BasisDen3,$BasisDen4;
 .sort
 *
 print +ss;
 .end
 assert succeeded?
-assert result("m1") =~ expr("0")
-assert result("m2") =~ expr("0")
-assert result("m3") =~ expr("0")
-assert result("m4") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartLoadMultiplicitiesToDollars_11 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "1"
 *
@@ -295,17 +258,15 @@ local F = APd2^4;
 $BasisDen1 = APd2;
 *
 #call ApartLoadMultiplicitiesToDollars(BasisDen,Multiplicity,1)
+multiply acc(1)*($Multiplicity1 - 4);
 *
-.sort
-*
-local m1 = $Multiplicity1 - 4;
-*
+ModuleOption,Local,$BasisDen1;
 .sort
 *
 print +ss;
 .end
 assert succeeded?
-assert result("m1") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartLoadMultiplicitiesToDollars_12 :
@@ -325,6 +286,7 @@ $BasisDen2 = APd2;
 id mark1 = ($Multiplicity1 - 2)*g1 + ($Multiplicity2 - 3)*g2;
 id mark2 = ($Multiplicity1 - 1)*g1 + ($Multiplicity2 - 5)*g2;
 *
+ModuleOption,Local,$BasisDen1,$BasisDen2;
 .sort
 *
 print +ss;
@@ -351,6 +313,7 @@ $BasisDen3 = APd3;
 id mark1 = ($Multiplicity1 - 1)*g1 + ($Multiplicity2 - 2)*g2 + ($Multiplicity3 - 3)*g3;
 id mark2 = ($Multiplicity1 - 4)*g1 + ($Multiplicity2 - 1)*g2 + ($Multiplicity3 - 2)*g3;
 *
+ModuleOption,Local,$BasisDen1,$BasisDen2,$BasisDen3;
 .sort
 *
 print +ss;
@@ -381,6 +344,7 @@ endif;
 id mark1 = ($Multiplicity1 - 2)*g1 + ($Multiplicity2 - 3)*g2;
 id mark2 = ($Multiplicity1 - 1)*g1 + ($Multiplicity2 - 4)*g2;
 *
+ModuleOption,Local,$BasisDen1,$BasisDen2;
 .sort
 *
 print +ss;
@@ -411,6 +375,7 @@ endif;
 id mark1 = ($Multiplicity1 - 3)*g1 + ($Multiplicity2 - 1)*g2;
 id mark2 = ($Multiplicity1 - 2)*g1 + ($Multiplicity2 - 5)*g2;
 *
+ModuleOption,Local,$BasisDen1,$BasisDen2;
 .sort
 *
 print +ss;
@@ -441,6 +406,7 @@ endif;
 id mark1 = ($Multiplicity1 - 2)*g1 + ($Multiplicity2 - 1)*g2;
 id mark2 = ($Multiplicity1 - 3)*g1 + ($Multiplicity2 - 0)*g2;
 *
+ModuleOption,Local,$BasisDen1,$BasisDen2;
 .sort
 *
 print +ss;
@@ -475,6 +441,7 @@ id mark1 = ($Multiplicity1 - 1)*g1 + ($Multiplicity2 - 2)*g2;
 id mark2 = ($Multiplicity1 - 4)*g1 + ($Multiplicity2 - 1)*g2;
 id mark3 = ($Multiplicity1 - 2)*g1 + ($Multiplicity2 - 3)*g2;
 *
+ModuleOption,Local,$BasisDen1,$BasisDen2;
 .sort
 *
 print +ss;
@@ -507,6 +474,7 @@ endif;
 id mark1 = ($Multiplicity1 - 1)*g1 + ($Multiplicity2 - 2)*g2 + ($Multiplicity3 - 3)*g3;
 id mark2 = ($Multiplicity1 - 2)*g1 + ($Multiplicity2 - 3)*g2 + ($Multiplicity3 - 1)*g3;
 *
+ModuleOption,Local,$BasisDen1,$BasisDen2,$BasisDen3;
 .sort
 *
 print +ss;
@@ -537,6 +505,7 @@ endif;
 id mark1 = ($Multiplicity1 - 2)*g1 + ($Multiplicity2 - 1)*g2;
 id mark2 = ($Multiplicity1 - 1)*g1 + ($Multiplicity2 - 2)*g2;
 *
+ModuleOption,Local,$BasisDen1,$BasisDen2;
 .sort
 *
 print +ss;

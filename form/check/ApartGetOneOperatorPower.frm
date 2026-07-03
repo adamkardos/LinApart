@@ -17,15 +17,14 @@ local F =
 .sort
 *
 #call ApartGetOneOperatorPower(dens,selNull,selDen,Pow,aux1,aux2,aux3,n1,n2)
+multiply $Pow - 1;
 *
 .sort
-*
-local probe = $Pow - 1;
 *
 print +s;
 .end
 assert succeeded?
-assert result("probe") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartGetOneOperatorPower_2 :
@@ -47,15 +46,14 @@ local F =
 .sort
 *
 #call ApartGetOneOperatorPower(dens,selNull,selDen,Pow,aux1,aux2,aux3,n1,n2)
+multiply $Pow - 2;
 *
 .sort
-*
-local probe = $Pow - 2;
 *
 print +s;
 .end
 assert succeeded?
-assert result("probe") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartGetOneOperatorPower_3 :
@@ -77,15 +75,14 @@ local F =
 .sort
 *
 #call ApartGetOneOperatorPower(dens,selNull,selDen,Pow,aux1,aux2,aux3,n1,n2)
+multiply $Pow - 1;
 *
 .sort
-*
-local probe = $Pow - 1;
 *
 print +s;
 .end
 assert succeeded?
-assert result("probe") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartGetOneOperatorPower_4 :
@@ -107,15 +104,14 @@ local F =
 .sort
 *
 #call ApartGetOneOperatorPower(dens,selNull,selDen,Pow,aux1,aux2,aux3,n1,n2)
+multiply $Pow - 2;
 *
 .sort
-*
-local probe = $Pow - 2;
 *
 print +s;
 .end
 assert succeeded?
-assert result("probe") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartGetOneOperatorPower_5 :
@@ -137,15 +133,14 @@ local F =
 .sort
 *
 #call ApartGetOneOperatorPower(dens,selNull,selDen,Pow,aux1,aux2,aux3,n1,n2)
+multiply $Pow - 2;
 *
 .sort
-*
-local probe = $Pow - 2;
 *
 print +s;
 .end
 assert succeeded?
-assert result("probe") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartGetOneOperatorPower_6 :
@@ -167,15 +162,14 @@ local F =
 .sort
 *
 #call ApartGetOneOperatorPower(dens,selNull,selDen,Pow,aux1,aux2,aux3,n1,n2)
+multiply $Pow - 2;
 *
 .sort
-*
-local probe = $Pow - 2;
 *
 print +s;
 .end
 assert succeeded?
-assert result("probe") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartGetOneOperatorPower_7 :
@@ -197,15 +191,14 @@ local F =
 .sort
 *
 #call ApartGetOneOperatorPower(dens,selNull,selDen,Pow,aux1,aux2,aux3,n1,n2)
+multiply $Pow - 3;
 *
 .sort
-*
-local probe = $Pow - 3;
 *
 print +s;
 .end
 assert succeeded?
-assert result("probe") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartGetOneOperatorPower_8 :
@@ -227,15 +220,14 @@ local F =
 .sort
 *
 #call ApartGetOneOperatorPower(dens,selNull,selDen,Pow,aux1,aux2,aux3,n1,n2)
+multiply $Pow - 50;
 *
 .sort
-*
-local probe = $Pow - 50;
 *
 print +s;
 .end
 assert succeeded?
-assert result("probe") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartGetOneOperatorPower_9 :
@@ -257,15 +249,14 @@ local F =
 .sort
 *
 #call ApartGetOneOperatorPower(dens,selNull,selDen,Pow,aux1,aux2,aux3,n1,n2)
+multiply $Pow - 4;
 *
 .sort
-*
-local probe = $Pow - 4;
 *
 print +s;
 .end
 assert succeeded?
-assert result("probe") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartGetOneOperatorPower_10 :
@@ -287,15 +278,14 @@ local F =
 .sort
 *
 #call ApartGetOneOperatorPower(dens,selNull,selDen,Pow,aux1,aux2,aux3,n1,n2)
+multiply $Pow - 5;
 *
 .sort
-*
-local probe = $Pow - 5;
 *
 print +s;
 .end
 assert succeeded?
-assert result("probe") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartGetOneOperatorPower_11 :
@@ -317,15 +307,14 @@ local F =
 .sort
 *
 #call ApartGetOneOperatorPower(dens,selNull,selDen,Pow,aux1,aux2,aux3,n1,n2)
+multiply $Pow - 2;
 *
 .sort
-*
-local probe = $Pow - 2;
 *
 print +s;
 .end
 assert succeeded?
-assert result("probe") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartGetOneOperatorPower_12 :
@@ -347,15 +336,14 @@ local F =
 .sort
 *
 #call ApartGetOneOperatorPower(dens,selNull,selDen,Pow,aux1,aux2,aux3,n1,n2)
+multiply $Pow - 6;
 *
 .sort
-*
-local probe = $Pow - 6;
 *
 print +s;
 .end
 assert succeeded?
-assert result("probe") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartGetOneOperatorPower_13 :
@@ -378,15 +366,14 @@ local F =
 .sort
 *
 #call ApartGetOneOperatorPower(dens,selNull,selDen,Pow,aux1,aux2,aux3,n1,n2)
+multiply $Pow - 2;
 *
 .sort
-*
-local probe = $Pow - 2;
 *
 print +s;
 .end
 assert succeeded?
-assert result("probe") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartGetOneOperatorPower_14 :
@@ -409,15 +396,14 @@ local F =
 .sort
 *
 #call ApartGetOneOperatorPower(dens,selNull,selDen,Pow,aux1,aux2,aux3,n1,n2)
+multiply $Pow - 1;
 *
 .sort
-*
-local probe = $Pow - 1;
 *
 print +s;
 .end
 assert succeeded?
-assert result("probe") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartGetOneOperatorPower_15 :
@@ -440,15 +426,14 @@ local F =
 .sort
 *
 #call ApartGetOneOperatorPower(dens,selNull,selDen,Pow,aux1,aux2,aux3,n1,n2)
+multiply $Pow - 2;
 *
 .sort
-*
-local probe = $Pow - 2;
 *
 print +s;
 .end
 assert succeeded?
-assert result("probe") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartGetOneOperatorPower_16 :
@@ -471,13 +456,12 @@ local F =
 .sort
 *
 #call ApartGetOneOperatorPower(dens,selNull,selDen,Pow,aux1,aux2,aux3,n1,n2)
+multiply $Pow - 2;
 *
 .sort
-*
-local probe = $Pow - 2;
 *
 print +s;
 .end
 assert succeeded?
-assert result("probe") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}

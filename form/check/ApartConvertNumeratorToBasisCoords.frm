@@ -1,5 +1,6 @@
 *{{{ ApartConvertNumeratorToBasisCoords_1 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -27,12 +28,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - APd1*APd2*Basis(1,2);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -40,12 +41,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_2 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -73,12 +73,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - APd1*APd2*Basis(1,2);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -86,8 +86,6 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_3 :
@@ -119,6 +117,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -159,6 +158,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -172,6 +172,7 @@ assert result("diff") =~ expr("0")
 *
 *{{{ ApartConvertNumeratorToBasisCoords_5 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -199,12 +200,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - APd1*APd2*Basis(1,2);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -212,12 +213,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_6 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -245,12 +245,12 @@ $Determinant = Det;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - APd1*APd2*Basis(1,2)/Det;
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -258,8 +258,6 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_7 :
@@ -291,6 +289,7 @@ $Determinant = Det;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -304,6 +303,7 @@ assert result("diff") =~ expr("0")
 *
 *{{{ ApartConvertNumeratorToBasisCoords_8 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "3"
 #Redefine APnumberOfDenominators "3"
@@ -342,13 +342,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,3,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,3,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2) + acc(3)*($BasisVector3 - APd3);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat1c3,$AdjMat2c1,$AdjMat2c2,$AdjMat2c3,$AdjMat3c1,$AdjMat3c2,$AdjMat3c3,$Determinant;
 *
 .sort
 *
 local diff = F - APd1*APd2*APd3*Basis(1,2,3);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
-local d3 = $BasisVector3 - APd3;
 *
 .sort
 *
@@ -356,9 +355,6 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
-assert result("d3") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_9 :
@@ -401,6 +397,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,3,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,3,n)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat1c3,$AdjMat2c1,$AdjMat2c2,$AdjMat2c3,$AdjMat3c1,$AdjMat3c2,$AdjMat3c3,$Determinant;
 *
 .sort
 *
@@ -441,6 +438,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -454,6 +452,7 @@ assert result("diff") =~ expr("0")
 *
 *{{{ ApartConvertNumeratorToBasisCoords_11 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -481,12 +480,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - APd1*APd2*Basis(1,2);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -494,8 +493,6 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_12 :
@@ -527,6 +524,7 @@ $Determinant = -2;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -540,6 +538,7 @@ assert result("diff") =~ expr("0")
 *
 *{{{ ApartConvertNumeratorToBasisCoords_13 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -567,12 +566,12 @@ $Determinant = -2;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - (APd1*APd2^2 + APd1^2*APd2)*Basis(1,2)/2;
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -580,8 +579,6 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_14 :
@@ -613,6 +610,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -626,6 +624,7 @@ assert result("diff") =~ expr("0")
 *
 *{{{ ApartConvertNumeratorToBasisCoords_15 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -653,12 +652,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - (APd1*APd2^2 - APd1^2*APd2)*Basis(1,2);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -666,12 +665,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_16 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -699,11 +697,8 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
-*
-.sort
-*
-local d1 = $BasisVector1 - (APd1 - 5);
-local d2 = $BasisVector2 - (APd2 + 3);
+multiply 1 + acc(1)*($BasisVector1 - (APd1 - 5)) + acc(2)*($BasisVector2 - (APd2 + 3));
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -713,12 +708,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_17 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -746,11 +740,8 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
-*
-.sort
-*
-local d1 = $BasisVector1 - (APd1 - s);
-local d2 = $BasisVector2 - (APd2 + t);
+multiply 1 + acc(1)*($BasisVector1 - (APd1 - s)) + acc(2)*($BasisVector2 - (APd2 + t));
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -760,12 +751,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_18 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -793,12 +783,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - (Basis(1,2)*APd2 + Basis(1,2)*APd1*APd2);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -806,12 +796,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_19 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -839,12 +828,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - (APd1 - 5)) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - (APd1*APd2 - 5*APd1^2*APd2)*Basis(1,2);
-local d1 = $BasisVector1 - (APd1 - 5);
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -852,12 +841,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_20 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -885,12 +873,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - (Basis(1,2)*APd2 + Basis(1,2)*APd1*APd2);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -898,12 +886,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_21 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "3"
 #Redefine APnumberOfDenominators "3"
@@ -942,12 +929,8 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,3,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,3,n)
-*
-.sort
-*
-local d1 = $BasisVector1 - (APd1 - 1);
-local d2 = $BasisVector2 - (APd2 + 2);
-local d3 = $BasisVector3 - (APd3 - 3);
+multiply 1 + acc(1)*($BasisVector1 - (APd1 - 1)) + acc(2)*($BasisVector2 - (APd2 + 2)) + acc(3)*($BasisVector3 - (APd3 - 3));
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat1c3,$AdjMat2c1,$AdjMat2c2,$AdjMat2c3,$AdjMat3c1,$AdjMat3c2,$AdjMat3c3,$Determinant;
 *
 .sort
 *
@@ -957,13 +940,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
-assert result("d3") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_22 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -991,12 +972,12 @@ $Determinant = epsilon^2 + epsilon + 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - den(epsilon^2 + epsilon + 1)*APd1*APd2*Basis(1,2);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -1004,8 +985,6 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_23 :
@@ -1037,6 +1016,7 @@ $Determinant = epsilon + 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -1050,6 +1030,7 @@ assert result("diff") =~ expr("0")
 *
 *{{{ ApartConvertNumeratorToBasisCoords_24 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -1077,12 +1058,12 @@ $Determinant = 5*epsilon;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - APd1*APd2*Basis(1,2)/(5*epsilon);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -1090,12 +1071,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_25 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -1123,12 +1103,12 @@ $Determinant = -1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F + APd1*APd2*Basis(1,2);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -1136,12 +1116,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_26 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -1169,12 +1148,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - epsilon*APd1*APd2*Basis(1,2);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -1182,12 +1161,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_27 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -1215,12 +1193,12 @@ $Determinant = 1 - epsilon^2;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - den(1 - epsilon^2)*(APd1*APd2^2 - epsilon*APd1^2*APd2)*Basis(1,2);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -1228,12 +1206,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_28 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -1261,12 +1238,12 @@ $Determinant = epsilon^2 - 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - den(epsilon^2 - 1)*(epsilon*APd1*APd2^2 + APd1^2*APd2)*Basis(1,2);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -1274,8 +1251,6 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_29 :
@@ -1333,6 +1308,8 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,4,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,4,n)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat1c3,$AdjMat1c4,$AdjMat2c1,$AdjMat2c2,$AdjMat2c3,$AdjMat2c4,$AdjMat3c1,$AdjMat3c2,$AdjMat3c3,$AdjMat3c4,$AdjMat4c1,$AdjMat4c2,
+    $AdjMat4c3,$AdjMat4c4,$Determinant;
 *
 .sort
 *
@@ -1346,6 +1323,7 @@ assert result("diff") =~ expr("0")
 *
 *{{{ ApartConvertNumeratorToBasisCoords_30 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "4"
 #Redefine APnumberOfDenominators "4"
@@ -1399,14 +1377,13 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,4,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,4,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2) + acc(3)*($BasisVector3 - APd3) + acc(4)*($BasisVector4 - APd4);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat1c3,$AdjMat1c4,$AdjMat2c1,$AdjMat2c2,$AdjMat2c3,$AdjMat2c4,$AdjMat3c1,$AdjMat3c2,$AdjMat3c3,$AdjMat3c4,$AdjMat4c1,$AdjMat4c2,
+    $AdjMat4c3,$AdjMat4c4,$Determinant;
 *
 .sort
 *
 local diff = F - APd1*APd2*APd3*APd4*Basis(1,2,3,4);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
-local d3 = $BasisVector3 - APd3;
-local d4 = $BasisVector4 - APd4;
 *
 .sort
 *
@@ -1414,14 +1391,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
-assert result("d3") =~ expr("0")
-assert result("d4") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_31 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -1449,11 +1423,8 @@ $Determinant = 1 + epsilon;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
-*
-.sort
-*
-local d1 = $BasisVector1 - (APd1 - 1);
-local d2 = $BasisVector2 - (APd2 + 1);
+multiply 1 + acc(1)*($BasisVector1 - (APd1 - 1)) + acc(2)*($BasisVector2 - (APd2 + 1));
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -1463,12 +1434,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_32 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -1496,12 +1466,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - 5*APd1*APd2*Basis(1,2);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -1509,12 +1479,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_33 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -1542,12 +1511,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - APd1*APd2*Basis(1,2);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -1555,12 +1524,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_34 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "3"
 #Redefine APnumberOfDenominators "3"
@@ -1599,13 +1567,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,3,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,3,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2) + acc(3)*($BasisVector3 - APd3);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat1c3,$AdjMat2c1,$AdjMat2c2,$AdjMat2c3,$AdjMat3c1,$AdjMat3c2,$AdjMat3c3,$Determinant;
 *
 .sort
 *
 local diff = F - APd1*APd2*APd3*Basis(1,2,3);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
-local d3 = $BasisVector3 - APd3;
 *
 .sort
 *
@@ -1613,9 +1580,6 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
-assert result("d3") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_35 :
@@ -1647,6 +1611,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -1660,6 +1625,7 @@ assert result("diff") =~ expr("0")
 *
 *{{{ ApartConvertNumeratorToBasisCoords_36 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -1687,12 +1653,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F + 3*APd1*APd2*Basis(1,2);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -1700,12 +1666,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_37 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -1733,12 +1698,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - (APd1*APd2^2 - APd1^2*APd2)*Basis(1,2);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -1746,12 +1711,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_38 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -1779,12 +1743,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - (APd1*APd2^2 - APd1^3*APd2)*Basis(1,2);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -1792,12 +1756,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_39 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -1825,12 +1788,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - (APd1 + 5)) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - (APd1*APd2 + 5*APd1^2*APd2)*Basis(1,2);
-local d1 = $BasisVector1 - (APd1 + 5);
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -1838,12 +1801,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_40 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -1871,12 +1833,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - (APd2 - 3));
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - (APd1*APd2 - 3*APd1*APd2^2)*Basis(1,2);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - (APd2 - 3);
 *
 .sort
 *
@@ -1884,12 +1846,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_41 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -1917,12 +1878,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - (APd1 - 2*s)) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - (APd1*APd2 - 2*s*APd1^2*APd2)*Basis(1,2);
-local d1 = $BasisVector1 - (APd1 - 2*s);
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -1930,12 +1891,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_42 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -1963,12 +1923,12 @@ $Determinant = 5;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - (3*APd1*APd2^2 - APd1^2*APd2)*Basis(1,2)/5;
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -1976,12 +1936,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_43 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -2009,12 +1968,12 @@ $Determinant = 5;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - (-APd1*APd2^2 + 2*APd1^2*APd2)*Basis(1,2)/5;
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -2022,12 +1981,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_44 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -2055,12 +2013,12 @@ $Determinant = -1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - APd1*APd2*Basis(1,2);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -2068,12 +2026,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_45 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -2101,12 +2058,12 @@ $Determinant = -2;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - APd1*APd2*Basis(1,2)/2;
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -2114,12 +2071,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_46 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -2147,12 +2103,12 @@ $Determinant = Det;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - APd1*APd2*Basis(1,2)/Det^3;
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -2160,12 +2116,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_47 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -2193,12 +2148,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - (APd1^-1*APd2 + APd2 + APd1*APd2)*Basis(1,2);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -2206,12 +2161,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_48 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -2239,12 +2193,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - (APd1*APd2 + APd1*APd2^2)*Basis(1,2);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -2252,12 +2206,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_49 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "3"
 #Redefine APnumberOfDenominators "3"
@@ -2296,13 +2249,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,3,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,3,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2) + acc(3)*($BasisVector3 - APd3);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat1c3,$AdjMat2c1,$AdjMat2c2,$AdjMat2c3,$AdjMat3c1,$AdjMat3c2,$AdjMat3c3,$Determinant;
 *
 .sort
 *
 local diff = F - APd1*APd2*APd3*Basis(1,2,3);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
-local d3 = $BasisVector3 - APd3;
 *
 .sort
 *
@@ -2310,9 +2262,6 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
-assert result("d3") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_50 :
@@ -2355,6 +2304,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,3,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,3,n)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat1c3,$AdjMat2c1,$AdjMat2c2,$AdjMat2c3,$AdjMat3c1,$AdjMat3c2,$AdjMat3c3,$Determinant;
 *
 .sort
 *
@@ -2368,6 +2318,7 @@ assert result("diff") =~ expr("0")
 *
 *{{{ ApartConvertNumeratorToBasisCoords_51 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "3"
@@ -2398,12 +2349,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd3);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - APd1*APd3*Basis(1,3);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd3;
 *
 .sort
 *
@@ -2411,12 +2362,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_52 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "4"
@@ -2450,12 +2400,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - (APd2 - 7)) + acc(2)*($BasisVector2 - APd4);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - (APd2*APd4 - 7*APd2^2*APd4)*Basis(2,4);
-local d1 = $BasisVector1 - (APd2 - 7);
-local d2 = $BasisVector2 - APd4;
 *
 .sort
 *
@@ -2463,11 +2413,10 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *{{{ ApartConvertNumeratorToBasisCoords_53 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "3"
@@ -2498,12 +2447,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - (APd1 - 2)) + acc(2)*($BasisVector2 - (APd3 - 5));
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - Basis(1,3)*(APd3 - 2*APd1*APd3);
-local d1 = $BasisVector1 - (APd1 - 2);
-local d2 = $BasisVector2 - (APd3 - 5);
 *
 .sort
 *
@@ -2511,12 +2460,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_54 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "3"
@@ -2547,12 +2495,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - (APd1 - 2)) + acc(2)*($BasisVector2 - (APd3 - 5));
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - Basis(1,3)*(APd1 - 5*APd1*APd3);
-local d1 = $BasisVector1 - (APd1 - 2);
-local d2 = $BasisVector2 - (APd3 - 5);
 *
 .sort
 *
@@ -2560,12 +2508,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_55 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "4"
@@ -2599,12 +2546,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - (APd2 - 3)) + acc(2)*($BasisVector2 - (APd4 - 1));
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - Basis(2,4)*(APd4 - 3*APd2*APd4);
-local d1 = $BasisVector1 - (APd2 - 3);
-local d2 = $BasisVector2 - (APd4 - 1);
 *
 .sort
 *
@@ -2612,12 +2559,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_56 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "4"
@@ -2651,12 +2597,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - (APd2 - 3)) + acc(2)*($BasisVector2 - (APd4 - 1));
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - Basis(2,4)*(APd2 - APd2*APd4);
-local d1 = $BasisVector1 - (APd2 - 3);
-local d2 = $BasisVector2 - (APd4 - 1);
 *
 .sort
 *
@@ -2664,12 +2610,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_57 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "3"
@@ -2700,12 +2645,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - (APd1 - 1)) + acc(2)*($BasisVector2 - APd3);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - Basis(1,3)*(2*APd3 - 2*APd1*APd3 - APd1);
-local d1 = $BasisVector1 - (APd1 - 1);
-local d2 = $BasisVector2 - APd3;
 *
 .sort
 *
@@ -2713,12 +2658,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_58 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "3"
@@ -2749,12 +2693,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - (APd1 - 1)) + acc(2)*($BasisVector2 - APd3);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - Basis(1,3)*(APd1*APd3 - APd3 + APd1);
-local d1 = $BasisVector1 - (APd1 - 1);
-local d2 = $BasisVector2 - APd3;
 *
 .sort
 *
@@ -2762,12 +2706,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_59 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "4"
@@ -2801,12 +2744,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - (APd2 - 4)) + acc(2)*($BasisVector2 - APd4);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - Basis(2,4)*(APd2*APd4 - 4*APd2^2*APd4);
-local d1 = $BasisVector1 - (APd2 - 4);
-local d2 = $BasisVector2 - APd4;
 *
 .sort
 *
@@ -2814,12 +2757,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_60 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "3"
@@ -2850,12 +2792,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - (APd1 - s)) + acc(2)*($BasisVector2 - (APd3 - t));
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - Basis(1,3)*(APd1 - APd1*APd3*t);
-local d1 = $BasisVector1 - (APd1 - s);
-local d2 = $BasisVector2 - (APd3 - t);
 *
 .sort
 *
@@ -2863,12 +2805,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_61 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "3"
 #Redefine APnumberOfDenominators "5"
@@ -2915,13 +2856,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,3,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,3,n)
+multiply 1 + acc(1)*($BasisVector1 - (APd1 - 2)) + acc(2)*($BasisVector2 - (APd3 - 4)) + acc(3)*($BasisVector3 - (APd5 - 6));
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat1c3,$AdjMat2c1,$AdjMat2c2,$AdjMat2c3,$AdjMat3c1,$AdjMat3c2,$AdjMat3c3,$Determinant;
 *
 .sort
 *
 local diff = F - Basis(1,3,5)*(APd1*APd3 - 6*APd1*APd3*APd5);
-local d1 = $BasisVector1 - (APd1 - 2);
-local d2 = $BasisVector2 - (APd3 - 4);
-local d3 = $BasisVector3 - (APd5 - 6);
 *
 .sort
 *
@@ -2929,13 +2869,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
-assert result("d3") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_62 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "3"
@@ -2966,12 +2904,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - (APd1 - 2)) + acc(2)*($BasisVector2 - (APd3 - 5));
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - Basis(1,3)*APd3;
-local d1 = $BasisVector1 - (APd1 - 2);
-local d2 = $BasisVector2 - (APd3 - 5);
 *
 .sort
 *
@@ -2979,12 +2917,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_63 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "3"
@@ -3015,12 +2952,12 @@ $Determinant = 6;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd3);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - 1/2*Basis(1,3)*APd3;
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd3;
 *
 .sort
 *
@@ -3028,12 +2965,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_64 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "4"
 #Redefine APnumberOfDenominators "7"
@@ -3102,14 +3038,13 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,4,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,4,n)
+multiply 1 + acc(1)*($BasisVector1 - (APd1 - 1)) + acc(2)*($BasisVector2 - (APd3 - 2)) + acc(3)*($BasisVector3 - (APd5 - 3)) + acc(4)*($BasisVector4 - (APd7 - 4));
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat1c3,$AdjMat1c4,$AdjMat2c1,$AdjMat2c2,$AdjMat2c3,$AdjMat2c4,$AdjMat3c1,$AdjMat3c2,$AdjMat3c3,$AdjMat3c4,$AdjMat4c1,$AdjMat4c2,
+    $AdjMat4c3,$AdjMat4c4,$Determinant;
 *
 .sort
 *
 local diff = F - Basis(1,3,5,7)*(APd1*APd3*APd5 - 4*APd1*APd3*APd5*APd7);
-local d1 = $BasisVector1 - (APd1 - 1);
-local d2 = $BasisVector2 - (APd3 - 2);
-local d3 = $BasisVector3 - (APd5 - 3);
-local d4 = $BasisVector4 - (APd7 - 4);
 *
 .sort
 *
@@ -3117,14 +3052,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
-assert result("d3") =~ expr("0")
-assert result("d4") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_65 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -3152,12 +3084,12 @@ $Determinant = -2;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - (APd1^2 + 2*APd1*APd2 + APd2^2)*Basis(1,2)/4;
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -3165,12 +3097,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_66 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -3198,12 +3129,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - Basis(1,2)*APd1^-2*APd2;
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -3211,12 +3142,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_67 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -3244,12 +3174,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - (APd1 - 3)) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - (APd1^-1*APd2 - 6*APd2 + 9*APd1*APd2)*Basis(1,2);
-local d1 = $BasisVector1 - (APd1 - 3);
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -3257,12 +3187,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_68 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -3290,12 +3219,12 @@ $Determinant = -2;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - (APd2^2 - APd1^2)*Basis(1,2)/4;
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -3303,12 +3232,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_69 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -3336,12 +3264,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - (APd1 - s)) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - (APd2 - 2*s*APd1*APd2 + s^2*APd1^2*APd2)*Basis(1,2);
-local d1 = $BasisVector1 - (APd1 - s);
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -3349,12 +3277,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_70 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "4"
@@ -3388,12 +3315,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - (APd2 - 3)) + acc(2)*($BasisVector2 - APd4);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - (APd4 - 6*APd2*APd4 + 9*APd2^2*APd4)*Basis(2,4);
-local d1 = $BasisVector1 - (APd2 - 3);
-local d2 = $BasisVector2 - APd4;
 *
 .sort
 *
@@ -3401,12 +3328,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_71 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -3434,12 +3360,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - 2/3*Basis(1,2)*APd1^-1*APd2;
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -3447,12 +3373,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_72 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -3480,12 +3405,12 @@ $Determinant = -2;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - (APd2^3 + APd1*APd2^2 - APd1^2*APd2 - APd1^3)*Basis(1,2)/8;
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -3493,12 +3418,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_73 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "2"
 #Redefine APnumberOfDenominators "2"
@@ -3526,12 +3450,12 @@ $Determinant = -2;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,2,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,2,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
 local diff = F - (APd2^3 + 3*APd1*APd2^2 + 3*APd1^2*APd2 + APd1^3)*Basis(1,2)/8;
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
 *
 .sort
 *
@@ -3539,12 +3463,11 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
 *}}}
 *
 *{{{ ApartConvertNumeratorToBasisCoords_74 :
 #include- ../src/formapart.h
+cfunction acc;
 *
 #Redefine APnumberOfVariables "3"
 #Redefine APnumberOfDenominators "3"
@@ -3583,13 +3506,12 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVector,3,n)
 #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,Basis,den,APdensSet,APcoeffTbl,APvariables,3,n)
+multiply 1 + acc(1)*($BasisVector1 - APd1) + acc(2)*($BasisVector2 - APd2) + acc(3)*($BasisVector3 - APd3);
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat1c3,$AdjMat2c1,$AdjMat2c2,$AdjMat2c3,$AdjMat3c1,$AdjMat3c2,$AdjMat3c3,$Determinant;
 *
 .sort
 *
 local diff = F - (APd2^2*APd3^2 + APd1^2*APd3^2 + APd1^2*APd2^2 - 2*APd1*APd2*APd3^2 + 2*APd1*APd2^2*APd3 - 2*APd1^2*APd2*APd3)*Basis(1,2,3);
-local d1 = $BasisVector1 - APd1;
-local d2 = $BasisVector2 - APd2;
-local d3 = $BasisVector3 - APd3;
 *
 .sort
 *
@@ -3597,7 +3519,4 @@ print +ss;
 .end
 assert succeeded?
 assert result("diff") =~ expr("0")
-assert result("d1") =~ expr("0")
-assert result("d2") =~ expr("0")
-assert result("d3") =~ expr("0")
 *}}}

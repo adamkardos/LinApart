@@ -10,16 +10,15 @@ local F = rowf(2)*colf(3);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - 7;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - 7;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_2 :
@@ -37,16 +36,15 @@ local F = rowf(1,2)*colf(1,2);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det + 2;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det + 2;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_3 :
@@ -62,16 +60,15 @@ local F = rowf(1,2)*colf(1,2);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det + 1;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det + 1;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_4 :
@@ -94,16 +91,15 @@ local F = rowf(1,2,3)*colf(1,2,3);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det + 3;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det + 3;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_5 :
@@ -126,16 +122,15 @@ local F = rowf(1,2,3)*colf(1,2,3);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_6 :
@@ -159,16 +154,15 @@ local F = rowf(1,2,3,4)*colf(1,2,3,4);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - 120;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - 120;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_7 :
@@ -186,16 +180,15 @@ local F = rowf(1,2)*colf(1,2);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - (ep^2-1);
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - (ep^2-1);
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_8 :
@@ -215,16 +208,15 @@ local F = rowf(1,2,3)*colf(1,2,3);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - (ep^3+1);
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - (ep^3+1);
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_9 :
@@ -242,16 +234,15 @@ local F = rowf(1,2)*colf(1,2);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - 1/60;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - 1/60;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_10 :
@@ -269,16 +260,15 @@ local F = rowf(4,2)*colf(5,1);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det + 2;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det + 2;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_11 :
@@ -301,16 +291,15 @@ local F = rowf(1,2,3,4,5)*colf(1,2,3,4,5);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - 2310;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - 2310;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_12 :
@@ -334,16 +323,15 @@ local F = rowf(1,2,3,4)*colf(1,2,3,4);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - (ep^4-3*ep^2+1);
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - (ep^4-3*ep^2+1);
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_13 :
@@ -361,16 +349,15 @@ local F = rowf(1,2)*colf(1,2);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - (x^2-y^2);
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - (x^2-y^2);
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_14 :
@@ -390,16 +377,15 @@ local F = rowf(1,2,3)*colf(1,2,3);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - (x^2*y+1);
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - (x^2*y+1);
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_15 :
@@ -422,16 +408,15 @@ local F = rowf(1,2,3)*colf(1,2,3);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - (b-a)*(c-a)*(c-b);
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - (b-a)*(c-a)*(c-b);
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_16 :
@@ -451,16 +436,15 @@ local F = rowf(1,2,3)*colf(1,2,3);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - 25/24;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - 25/24;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_17 :
@@ -478,16 +462,15 @@ local F = rowf(1,2,3,4)*colf(1,2,3,4);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - 1;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - 1;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_18 :
@@ -507,16 +490,15 @@ local F = rowf(1,2,3)*colf(1,2,3);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_19 :
@@ -536,16 +518,15 @@ local F = rowf(1,2,3)*colf(1,2,3);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det + 2;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det + 2;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_20 :
@@ -563,16 +544,15 @@ local F = rowf(1,2)*colf(1,2);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - (a*d-b*c);
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - (a*d-b*c);
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_21 :
@@ -587,16 +567,15 @@ local F = rowf(1)*colf(1);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - a;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - a;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_22 :
@@ -614,16 +593,15 @@ local F = rowf(1,2)*colf(1,2);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - (a^2+b^2);
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - (a^2+b^2);
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_23 :
@@ -641,16 +619,15 @@ local F = rowf(1,2)*colf(1,2);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - (a^2-b^2-1);
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - (a^2-b^2-1);
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_24 :
@@ -673,20 +650,19 @@ local F = rowf(1,2,3)*colf(1,2,3);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
-*
-.sort
-*
-local D = $det - (
+multiply $det - (
   + a11*a22*a33 - a11*a23*a32
   - a12*a21*a33 + a12*a23*a31
   + a13*a21*a32 - a13*a22*a31
 );
+ModuleOption,Local,$det;
+*
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_25 :
@@ -707,16 +683,15 @@ local F = rowf(1,2,3)*colf(1,2,3);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - (a^2*b^2*c*d - b*c*d^2 + 1);
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - (a^2*b^2*c*d - b*c*d^2 + 1);
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_26 :
@@ -739,16 +714,15 @@ local F = rowf(1,2,3)*colf(1,2,3);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_27 :
@@ -771,16 +745,15 @@ local F = rowf(1,3,5)*colf(2,3,5);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_28 :
@@ -803,16 +776,15 @@ local F = rowf(1,2,3)*colf(1,2,3);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - 1/33600;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - 1/33600;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_29 :
@@ -836,16 +808,15 @@ local F = rowf(1,2,3,4)*colf(1,2,3,4);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - 5;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - 5;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_30 :
@@ -874,16 +845,15 @@ local F = rowf(1,2,3,4,5)*colf(1,2,3,4,5);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - 2700;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - 2700;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_31 :
@@ -906,16 +876,15 @@ local F = rowf(1,2,3,4,5)*colf(1,2,3,4,5);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - 36;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - 36;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_32 :
@@ -954,16 +923,15 @@ local F = rowf(1,2,3,4,5)*colf(1,2,3,4,5);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - 6;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - 6;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_33 :
@@ -982,16 +950,15 @@ local F = rowf(1,2,3,4,5)*colf(1,2,3,4,5);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - a*b*c*d*e;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - a*b*c*d*e;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_34 :
@@ -1021,16 +988,15 @@ local F = rowf(1,2,3,4)*colf(1,2,3,4);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - (b-a)*(c-a)*(d-a)*(c-b)*(d-b)*(d-c);
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - (b-a)*(c-a)*(d-a)*(c-b)*(d-b)*(d-c);
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_35 :
@@ -1069,17 +1035,16 @@ local F = rowf(1,2,3,4,5)*colf(1,2,3,4,5);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
-*
-.sort
-*
-local D = $det
+multiply $det
   - (b-a)*(c-a)*(d-a)*(e-a)*(c-b)*(d-b)*(e-b)*(d-c)*(e-c)*(e-d);
+ModuleOption,Local,$det;
+*
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_36 :
@@ -1106,16 +1071,15 @@ local F = rowf(1,2,3,4,5)*colf(1,2,3,4,5);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - (ep^5-4*ep^3+3*ep);
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - (ep^5-4*ep^3+3*ep);
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_37 :
@@ -1139,16 +1103,15 @@ local F = rowf(1,2,3,4)*colf(1,2,3,4);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - (x^4-3*x^2*y+y^2);
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - (x^4-3*x^2*y+y^2);
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_38 :
@@ -1175,16 +1138,15 @@ local F = rowf(1,2,3,4,5)*colf(1,2,3,4,5);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - (x^5-4*x^3*y+3*x*y^2);
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - (x^5-4*x^3*y+3*x*y^2);
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_39 :
@@ -1206,16 +1168,15 @@ local F = rowf(1,2,3)*colf(1,2,3);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det + 3;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det + 3;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_40 :
@@ -1232,16 +1193,15 @@ local F = rowf(1,2,3)*colf(1,2,3);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det + 30;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det + 30;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_41 :
@@ -1258,16 +1218,15 @@ local F = rowf(1,2,3)*colf(1,2,3);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det + 1;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det + 1;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_42 :
@@ -1290,16 +1249,15 @@ local F = rowf(1,2,3)*colf(1,2,3);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det + 1;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det + 1;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_43 :
@@ -1319,16 +1277,15 @@ local F = rowf(1,2,3)*colf(1,2,3);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_44 :
@@ -1342,16 +1299,15 @@ local F = rowf(1,2,3)*colf(1,2,3);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_45 :
@@ -1370,16 +1326,15 @@ local F = rowf(1,2,3,4,5)*colf(1,2,3,4,5);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - 1;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - 1;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_46 :
@@ -1399,16 +1354,15 @@ local F = rowf(1,2,3,4)*colf(1,2,3,4);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - 2;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - 2;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_47 :
@@ -1433,25 +1387,25 @@ local F2 = rowf(2,1,3)*colf(1,2,3);
 *
 hide F2;
 #call ApartBareissDeterminant(det1,rowf,colf,aux,mtab,5,z)
+multiply $det1 + 3;
+ModuleOption,Local,$det1;
 .sort
 *
 unhide F2;
 hide F1;
 #call ApartBareissDeterminant(det2,rowf,colf,aux,mtab,5,z)
+multiply $det2 - 3;
+ModuleOption,Local,$det2;
 .sort
 *
 unhide F1;
-local D1 = $det1 + 3;
-local D2 = $det2 - 3;
-local Dsum = $det1 + $det2;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D1") =~ expr("0")
-assert result("D2") =~ expr("0")
-assert result("Dsum") =~ expr("0")
+assert result("F1") =~ expr("0")
+assert result("F2") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_48 :
@@ -1469,16 +1423,15 @@ local F = rowf(1,2,3,4)*colf(1,2,3,4);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det + 1;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det + 1;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_49 :
@@ -1498,18 +1451,16 @@ local F = rowf(1,2,3)*colf(1,2,3);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
-*
 *
 *{{{ ApartBareissDeterminant_50 :
 #include- ../src/formapart.h
@@ -1529,16 +1480,15 @@ local F = rowf(2,3,4)*colf(1,2,4);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - 1;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - 1;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_51 :
@@ -1559,16 +1509,15 @@ local F = rowf(1,3,4)*colf(1,2,4);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - 1;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - 1;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_52 :
@@ -1589,16 +1538,15 @@ local F = rowf(1,2,4)*colf(1,2,4);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_53 :
@@ -1619,16 +1567,15 @@ local F = rowf(1,2,3)*colf(1,2,4);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det + 1;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det + 1;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_54 :
@@ -1649,16 +1596,15 @@ local F = rowf(2,3,4)*colf(1,2,3);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_55 :
@@ -1677,16 +1623,15 @@ local F = rowf(1,2,3)*colf(1,2,3);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - 1;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - 1;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}
 *
 *{{{ ApartBareissDeterminant_56 :
@@ -1705,14 +1650,13 @@ local F = rowf(1,2,3)*colf(1,2,3);
 .sort
 *
 #call ApartBareissDeterminant(det,rowf,colf,aux,mtab,5,z)
+multiply $det - 6;
+ModuleOption,Local,$det;
 *
-.sort
-*
-local D = $det - 6;
 .sort
 *
 print +s;
 .end
 assert succeeded?
-assert result("D") =~ expr("0")
+assert result("F") =~ expr("0")
 *}}}

@@ -1603,6 +1603,7 @@
     id APcol(?a) = 1;
     #call ApartSetBasisVecDollarsFromBasis(APbasis,APdensSet,APaux,APcoeffTbl,BasisVector,`APnumberOfVariables',APn)
     id APdet(APn1?$Determinant) = 1;
+    ModuleOption,Local,$Determinant;
     #call ApartConvertNumeratorToBasisCoords(AdjMat,c,Determinant,BasisVector,APbasis,APden,APdensSet,APcoeffTbl,APvariables,`APnumberOfVariables',APn)
     id APbasis(?a) = 1;
   EndIf;

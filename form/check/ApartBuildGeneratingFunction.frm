@@ -28,6 +28,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -74,6 +75,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -120,6 +122,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -166,6 +169,7 @@ $Determinant = -1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -212,6 +216,7 @@ $Determinant = -1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -258,6 +263,7 @@ $Determinant = -2;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -304,6 +310,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -353,6 +360,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -399,6 +407,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -445,6 +454,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -491,6 +501,7 @@ $Determinant = 5;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -534,6 +545,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -592,6 +604,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,3,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat1c3,$AdjMat2c1,$AdjMat2c2,$AdjMat2c3,$AdjMat3c1,$AdjMat3c2,$AdjMat3c3,$Determinant;
 *
 .sort
 *
@@ -630,6 +643,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,1,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$Determinant;
 *
 .sort
 *
@@ -668,6 +682,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,1,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$Determinant;
 *
 .sort
 *
@@ -714,6 +729,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -760,6 +776,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -809,6 +826,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -861,6 +879,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -919,6 +938,7 @@ $Determinant = 2;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,3,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat1c3,$AdjMat2c1,$AdjMat2c2,$AdjMat2c3,$AdjMat3c1,$AdjMat3c2,$AdjMat3c3,$Determinant;
 *
 .sort
 *
@@ -955,6 +975,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,1,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$Determinant;
 *
 .sort
 *
@@ -1001,6 +1022,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -1047,6 +1069,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -1093,6 +1116,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -1131,6 +1155,7 @@ $Determinant = 2;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,1,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$Determinant;
 *
 .sort
 *
@@ -1185,6 +1210,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,3,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat1c3,$AdjMat2c1,$AdjMat2c2,$AdjMat2c3,$AdjMat3c1,$AdjMat3c2,$AdjMat3c3,$Determinant;
 *
 .sort
 *
@@ -1231,6 +1257,7 @@ $Determinant = s;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -1277,6 +1304,7 @@ $Determinant = s;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -1323,6 +1351,7 @@ $Determinant = s*t;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -1369,6 +1398,7 @@ $Determinant = s*t-1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -1419,6 +1449,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -1465,6 +1496,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -1514,6 +1546,7 @@ $Determinant = s;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -1560,6 +1593,7 @@ $Determinant = s;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -1634,6 +1668,8 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,4,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat1c3,$AdjMat1c4,$AdjMat2c1,$AdjMat2c2,$AdjMat2c3,$AdjMat2c4,$AdjMat3c1,$AdjMat3c2,$AdjMat3c3,$AdjMat3c4,$AdjMat4c1,
+    $AdjMat4c2,$AdjMat4c3,$AdjMat4c4,$Determinant;
 *
 .sort
 *
@@ -1672,6 +1708,7 @@ $Determinant = s+t;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,1,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$Determinant;
 *
 .sort
 *
@@ -1718,6 +1755,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -1764,6 +1802,7 @@ $Determinant = 100;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -1819,6 +1858,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -1871,6 +1911,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -1917,6 +1958,7 @@ $Determinant = s+t;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -1963,6 +2005,7 @@ $Determinant = s;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -2015,6 +2058,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -2061,6 +2105,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -2119,6 +2164,7 @@ $Determinant = s+1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,3,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat1c3,$AdjMat2c1,$AdjMat2c2,$AdjMat2c3,$AdjMat3c1,$AdjMat3c2,$AdjMat3c3,$Determinant;
 *
 .sort
 *
@@ -2168,6 +2214,7 @@ $Determinant = s*t-1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -2233,6 +2280,7 @@ $Determinant = s*t*u-s-t-u+2;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,3,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat1c3,$AdjMat2c1,$AdjMat2c2,$AdjMat2c3,$AdjMat3c1,$AdjMat3c2,$AdjMat3c3,$Determinant;
 *
 .sort
 *
@@ -2296,6 +2344,7 @@ $Determinant = s*t*u+1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,3,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat1c3,$AdjMat2c1,$AdjMat2c2,$AdjMat2c3,$AdjMat3c1,$AdjMat3c2,$AdjMat3c3,$Determinant;
 *
 .sort
 *
@@ -2363,6 +2412,7 @@ $Determinant = s*t-1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,3,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat1c3,$AdjMat2c1,$AdjMat2c2,$AdjMat2c3,$AdjMat3c1,$AdjMat3c2,$AdjMat3c3,$Determinant;
 *
 .sort
 *
@@ -2448,6 +2498,8 @@ $Determinant = s*t;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,4,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat1c3,$AdjMat1c4,$AdjMat2c1,$AdjMat2c2,$AdjMat2c3,$AdjMat2c4,$AdjMat3c1,$AdjMat3c2,$AdjMat3c3,$AdjMat3c4,$AdjMat4c1,
+    $AdjMat4c2,$AdjMat4c3,$AdjMat4c4,$Determinant;
 *
 .sort
 *
@@ -2500,6 +2552,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -2546,6 +2599,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -2592,6 +2646,7 @@ $Determinant = -1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -2647,6 +2702,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -2712,6 +2768,7 @@ $Determinant = 1 - epsilon;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -2776,6 +2833,7 @@ $Determinant = -epsilon^2;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -2831,6 +2889,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -2883,6 +2942,7 @@ $Determinant = 1;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
@@ -2938,6 +2998,7 @@ $Determinant = -epsilon^2;
 *
 #call ApartSetBasisVecDollarsFromBasis(Basis,APdensSet,aux,APcoeffTbl,BasisVec,2,n)
 #call ApartBuildGeneratingFunction(AdjMat,c,Determinant,BasisVec,Basis,NonBasis,GenFunc,Coeff,aux,APdensSet,APcoeffTbl,n1,n2)
+ModuleOption,Local,$AdjMat1c1,$AdjMat1c2,$AdjMat2c1,$AdjMat2c2,$Determinant;
 *
 .sort
 *
